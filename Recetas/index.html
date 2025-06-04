@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Recetas Sin TACC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="buscador-contenedor"></div>
+    <input type="text" id="searchInput" placeholder="Buscar receta o ingrediente...">
+    <ul id="resultsList"></ul>
+
+
+   <div id="resultadosBusqueda"></div>
+    <h1>Recetas Sin TACC</h1>
+    <p>Seleccioná una categoría para ver recetas libres de gluten</p>
+  </header>
+
+  <nav>
+    <div class="carrusel-container">
+    <button class="arrow left" id="flecha-izquierda">&#10094;</button>
+    <div class="carrusel" id="carrusel">
+    
+    <img src="Fotos para pagina/PASTAS.jpg" data-categoria="pastas" alt="Pastas" />
+    <img src="Fotos para pagina/dulces y tortas.jpg" data-categoria="tortasYdulces" alt="Tortas y dulces" />
+    <img src="Fotos para pagina/Panes1.jpg" data-categoria="panes" alt="Panes" />
+    <img src="Fotos para pagina/Masas.jpg" data-categoria="masas" alt="Masas" />
+    </div>
+     <button class="arrow right" id="flecha-derecha">&#10095;</button>
+</div>
+
+
+  </nav>
+        <div id="recetas-container"></div>
+    
+
+
+  <main>
+    <section id="recetas">
+      <div class="consejos-content">
+    <h2 class="consejos-title">Consejos clave para cocinar sin TACC</h2>
+    
+    <p class="consejos-intro">
+      Cocinar sin TACC requiere cuidados especiales para garantizar preparaciones seguras y deliciosas para personas celíacas o con sensibilidad al gluten. Acá te dejamos los puntos esenciales:
+    </p>
+
+    <div class="consejos-bloques">
+      <div class="bloque">
+        <h3 class="bloque-title">✅ Evitá la contaminación cruzada</h3>
+        <ul class="bloque-lista">
+          <li>Usá utensilios y superficies exclusivas o bien lavadas.</li>
+          <li>No compartas aceite, tostadoras ni coladores.</li>
+          <li>Almacená los ingredientes sin TACC por separado y bien etiquetados.</li>
+        </ul>
+      </div>
+
+      <div class="bloque">
+        <h3 class="bloque-title">✅ Usá ingredientes certificados</h3>
+        <p>
+          Elegí productos que tengan el símbolo <strong>“sin TACC”</strong>. No todos los alimentos naturalmente libres de gluten son seguros si no están certificados.
+        </p>
+      </div>
+
+      <div class="bloque">
+        <h3 class="bloque-title">✅ Leé siempre las etiquetas</h3>
+        <p>
+          Incluso en productos conocidos, ya que las fórmulas pueden cambiar. Prestá atención a los aditivos, saborizantes y almidones.
+        </p>
+      </div>
+
+      <div class="bloque bloque-harinas">
+        <h3 class="bloque-subtitulo">🌾 Harinas sin TACC recomendadas</h3>
+        <ul class="bloque-lista">
+          <li><strong>Harina de arroz:</strong> liviana y versátil.</li>
+          <li><strong>Harina de maíz:</strong> ideal para masas y polenta.</li>
+          <li><strong>Fécula de maíz:</strong> mejora textura y elasticidad.</li>
+          <li><strong>Harina de mandioca:</strong> buena para panes y chipá.</li>
+          <li><strong>Harina de garbanzo:</strong> sabrosa y nutritiva.</li>
+          <li><strong>Harinas integrales:</strong> de sorgo, quinoa, teff o mijo.</li>
+        </ul>
+        <p class="bloque-nota">💡 Lo ideal es <strong>mezclar varias harinas</strong> para lograr una textura parecida al trigo.</p>
+      </div>
+
+      <div class="bloque">
+        <h3 class="bloque-subtitulo">👩‍🍳 Trucos útiles para cocinar sin gluten</h3>
+        <ul class="bloque-lista">
+          <li>Usá <strong>goma xántica</strong> o <strong>psyllium</strong> para mejorar la elasticidad.</li>
+          <li>Pesá los ingredientes para mayor precisión.</li>
+          <li>Añadí ingredientes húmedos (huevo, puré, aceite) para evitar sequedad.</li>
+          <li>Dejá reposar la masa antes de hornear.</li>
+          <li>Precalentá bien el horno.</li>
+          <li>Conservá los productos en heladera o freezer.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
