@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAPA</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+
+</head>
+<body>
+  <header class="encabezado">
+    <h1 class="titulo">CeliRadar</h1>
+    <img src="" alt="Logo" class="logo" />
+  </header>
+
+<!-- Menú hamburguesa -->
+  <nav class="navbar">
+   <div class="hamburguesa" id="boton-menu">
+    ☰
+   </div>
+
+<!--barra de búsqueda-->
+   <form class="busqueda-form">
+    <input type="text" placeholder="Buscar lugares sin TACC" id="busqueda-input">
+    <button type="submit">🔍</button>
+  </form>
+
+  <!--Menú-->
+     <ul class="menu" id="menu">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Mapa</a></li>
+      <li><a href="#">Recetas/Comentarios</a></li>
+   
+   </ul>
+  </nav>
+
+<!--Botones de filtros búsqueda-->
+ <div class="filtros-container">
+  <button class="filtro-btn" data-tipo="restaurante">🍽️ Restaurantes</button>
+  <button class="filtro-btn" data-tipo="cafe">☕ Cafés</button>
+  <button class="filtro-btn" data-tipo="dietetica">🥦 Dietéticas</button>
+  <button class="filtro-btn" data-tipo="mercado">🛒 Mercados</button>
+  <button class="filtro-btn" data-tipo="todos">Todos</button>
+ </div>
+
+  <!--MAPA-->
+   <div id="Mapa"></div>
+
+   <!-- Ventana emergente inferior -->
+<div id="info-lugar" class="info-lugar oculto">
+  <button id="cerrar-info" class="btn-cerrar">❌</button>
+  <h3 id="info-nombre"></h3>
+  <p id="info-tipo"></p>
+  <p id="info-direccion"></p>
+  <img id="info-imagen" src="" alt="Imagen del lugar" class="imagen-lugar">
+  <button id="btn-guardar" class="btn-guardar">⭐ Guardar lugar</button>
+
+  <button id="cerrar-info" style="float:right; background:none; border:none;">❌</button>
+
+</div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <script src="scripts.js"></script>
+
+<footer class="footer">
+  <a href="index.html" class="footer-btn">🏠 Inicio</a>
+  <a href="recetas.html" class="footer-btn">📖 Recetas</a>
+  <a href="guardados.html" class="footer-btn">⭐ Guardados</a>
+</footer>
+  
+
+</body>
+
+</html>
