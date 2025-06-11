@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CeliRadar</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <button id="menu-btn">☰</button>
+  <div class="menu" id="menu">
+    <a href="#">Inicio</a>
+    <a href="#">Mapa</a>
+    <a href="#">Recetas</a>
+  </div>
+
+  <button id="ir-mapa">Ir al mapa</button>
+
+  <div class="container">
+    <div class="titulo">CeliRadar</div>
+    <div class="subtitulo">Todo lo que buscas en el mejor lugar</div>
+    <div class="logo">LOGO</div>
+
+    <input type="email" placeholder="Email" />
+    <input type="password" placeholder="Contraseña" />
+
+    <button>Aceptar</button>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <p>Para poder acceder a recetas, reseñas y descuentos suscribirse.</p>
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Contraseña" />
+      <button onclick="cerrarModal()">Aceptar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
