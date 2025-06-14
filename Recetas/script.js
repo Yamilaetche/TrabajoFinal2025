@@ -246,6 +246,22 @@ document.addEventListener("DOMContentLoaded", () => {
     ]
   };
 
+  const botonMenu = document.getElementById("boton-menu");
+const menu = document.getElementById("menu");
+
+botonMenu.addEventListener("click", (e) => {
+  e.stopPropagation(); // Previene cierre inmediato si hacés clic en el ícono
+  menu.classList.toggle("activo");
+});
+
+// Cerrar el menú si hacés clic fuera de él
+document.addEventListener("click", (e) => {
+  if (!menu.contains(e.target) && !botonMenu.contains(e.target)) {
+    menu.classList.remove("activo");
+  }
+});
+
+
   const carrusel = document.getElementById("carrusel");
   const flechaIzquierda = document.getElementById("flecha-izquierda");
   const flechaDerecha = document.getElementById("flecha-derecha");
