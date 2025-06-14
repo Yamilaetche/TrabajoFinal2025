@@ -26,6 +26,55 @@ input[type="text"] {
   font-size: 16px;
   margin-bottom: 20px;
 }
+.logo {
+  height: 150px;
+  margin-left: 150px;
+  
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  background-color: #a7d7b8;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.hamburguesa {
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1100; /* para que quede encima del menú */
+  
+}
+
+.menu {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1100;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+   background-color: #c8e6c9;
+}
+
+.menu.activo {
+  display: flex;
+}
+
+.menu li a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+   cursor: pointer;
+}
+
 
 .carrusel-container {
   position: relative;
@@ -83,9 +132,6 @@ input[type="text"] {
 .right {
   right: 10px;
 }
-
-
-
 
 main {
   padding: 20px;
