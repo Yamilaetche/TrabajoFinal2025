@@ -42,25 +42,19 @@ input[type="text"] {
 }
 
 .hamburguesa {
-  font-size: 30px;
+  font-size: 24px;
   cursor: pointer;
-  z-index: 1100; /* para que quede encima del menú */
-  
+  margin-right: 10px;
 }
 
 .menu {
-  list-style: none;
   display: none;
   flex-direction: column;
-  padding: 0;
-  margin: 0;
+  background-color: #b7f0ae;
   position: absolute;
-  top: 100%;
+  top: 50px;
   left: 0;
-  z-index: 1100;
-  width: 200px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-   background-color: #c8e6c9;
+  z-index: 1000;
 }
 
 .menu.activo {
