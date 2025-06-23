@@ -42,19 +42,7 @@ input[type="text"] {
 }
 
 .hamburguesa {
-  font-size: 24px;
-  cursor: pointer;
-  margin-right: 10px;
-}
 
-.menu {
-  display: none;
-  flex-direction: column;
-  background-color: #b7f0ae;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  z-index: 1000;
 }
 
 .menu.activo {
@@ -297,3 +285,4 @@ main {
 #resultsList li:hover {
   background-color: #f0f0f0;
 }
+
