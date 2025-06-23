@@ -42,8 +42,11 @@ input[type="text"] {
 }
 
 .hamburguesa {
-
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 10px;
 }
+
 
 .menu.activo {
   display: flex;
@@ -286,3 +289,50 @@ main {
   background-color: #f0f0f0;
 }
 
+#formularioReceta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+}
+
+#formularioReceta input,
+#formularioReceta textarea {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#formularioReceta button {
+  background-color: #a2d5ab;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#formularioReceta button:hover {
+  background-color: #7bcf8a;
+}
+
+#mostrarFormulario {
+  margin-top: 2em;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #a2d5ab;
+  border: none;
+  cursor: pointer;
+}
+
+#mostrarFormulario:hover {
+  background-color: #7bcf8a;
+}
+
+.receta {
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-top: 1em;
+  border-radius: 10px;
+  background-color: #f9fff9;
+}
