@@ -45,6 +45,21 @@
   </nav>
         <div id="recetas-container"></div>
 
+<!-- Botón para abrir el formulario -->
+<button id="mostrarFormulario">➕ Agregar receta</button>
+
+<!-- Formulario oculto para agregar una receta -->
+<form id="formularioReceta" style="display: none; margin-top: 1em;">
+  <input type="text" id="titulo" placeholder="Ej: Pan sin gluten" required>
+  <textarea id="ingredientes" placeholder="Ej: Ingredientes: 2 tazas de harina de arroz..." required></textarea>
+  <textarea id="pasos" placeholder="Ej: Pasos: Mezclar los ingredientes..." required></textarea>
+  <button type="submit">Agregar</button>
+</form>
+
+<!-- Acá se insertarán las nuevas recetas -->
+ <h2> Recetas de Usuarios</h2>
+<div id="recetasUsuario"></div>
+
 
 
   <main>
