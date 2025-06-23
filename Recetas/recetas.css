@@ -303,3 +303,54 @@ main {
 #resultsList li:hover {
   background-color: #f0f0f0;
 }
+#formularioReceta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 600px;
+}
+
+#formularioReceta input,
+#formularioReceta textarea {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#formularioReceta button {
+  background-color: #a2d5ab;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#formularioReceta button:hover {
+  background-color: #7bcf8a;
+}
+
+#mostrarFormulario {
+  margin-top: 2em;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #a2d5ab;
+  border: none;
+  cursor: pointer;
+}
+
+#mostrarFormulario:hover {
+  background-color: #7bcf8a;
+}
+
+.receta {
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-top: 1em;
+  border-radius: 10px;
+  background-color: #f9fff9;
+}
+.receta em {
+  color: #555;
+  font-size: 0.9em;
+}

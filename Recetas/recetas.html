@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Recetas Sin TACC</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="recetas.css">
 </head>
 <body>
   <header>
@@ -46,7 +46,25 @@
 
   </nav>
         <div id="recetas-container"></div>
+
+
+        
     
+<!-- Botón para abrir el formulario -->
+<button id="mostrarFormulario">➕ Agregar receta</button>
+
+<!-- Formulario oculto para agregar una receta -->
+<form id="formularioReceta" style="display: none; margin-top: 1em;">
+  <input type="text" id="titulo" placeholder="Ej: Pan sin gluten" required>
+  <textarea id="ingredientes" placeholder="Ingredientes, Ej: 2 tazas de harina de arroz..." required></textarea>
+  <textarea id="pasos" placeholder="Pasos, Ej: Mezclar los ingredientes..." required></textarea>
+  <button type="submit">Agregar</button>
+</form>
+
+<!-- Acá se insertarán las nuevas recetas -->
+ <h2>Recetas de Usuarios </h2>
+<div id="recetasUsuario"></div>
+
 
 
   <main>
@@ -113,6 +131,6 @@
     
   </main>
 
-  <script src="script.js" defer></script>
+  <script src="recetas.js" defer></script>
 </body>
 </html>
