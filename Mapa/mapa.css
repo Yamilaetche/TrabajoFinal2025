@@ -1,34 +1,36 @@
+/* Variables para colores */
+:root {
+  --verde-suave: #a9f3a1;
+  --verde-principal: #d3d5d4;
+  --verde-claro: #b7f0ae;
+  --verde-oscuro: #398e54;
+  --texto: #047225;
+}
+
+/* Body y base */
 body {
-  background-color: #a9f3a1;
+  background-color: var(--verde-suave);
   margin: 0;
   padding-bottom: 120px;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
 }
 
-#Mapa {
-  height: 800px; 
-  margin: 40px;  
-  border-radius: 12px; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-}
-
-
+/* Header */
 .encabezado {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #a9f3a1;
+  background-color: var(--verde-suave);
   padding: 10px 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   position: relative;
   z-index: 1000;
 }
 
 .titulo {
   font-size: 40px;
-  color: #023e14;
   font-weight: bold;
-  font-family:Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
@@ -38,66 +40,106 @@ body {
   margin-left: 30%;
 }
 
+/* Navbar */
 .navbar {
+  position: relative; /* para menú absoluto */
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  background-color: #107d36;
+  background-color: var(--verde-principal);
+  color: white;
+  flex-wrap: wrap;
 }
 
-
+/* Botón hamburguesa */
 .hamburguesa {
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
   margin-right: 10px;
+  user-select: none;
+  z-index: 1100;
+  color: white;
 }
 
+/* Menú desplegable */
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%;  
+  left: 0;
+  background-color: var(--verde-claro);
+  flex-direction: column;
+  width: 150px;
+  max-width: 90vw;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-radius: 0 0 10px 10px;
+  z-index: 1050;
+  margin-top: 4px;
+  padding: 10px 0;
+}
 
+/* Mostrar menú */
+.menu.activo {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Items del menú */
+.menu li {
+  list-style: none;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--verde-oscuro);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+  background-color: #8bef64;
+}
+
+/* Formulario de búsqueda */
 .busqueda-form {
   display: flex;
-  justify-content: center;
-  margin: 10px;
-  flex-grow: 1;
+  align-items: center;
+  margin-left: auto;
 }
 
 .busqueda-form input {
-  padding: 5px;
-  font-size: 16px;
-  border-radius: 4px 0 0 4px;
+  padding: 6px 10px;
   border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+  outline: none;
   width: 200px;
 }
 
 .busqueda-form button {
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 0 4px 4px 0;
+  padding: 6px 12px;
   border: none;
-  background-color: #555;
+  background-color: var(--verde-oscuro);
   color: white;
+  border-radius: 0 4px 4px 0;
   cursor: pointer;
-}
-.menu {
-  display: none;
-  flex-direction: column;
-  background-color: #b7f0ae;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  z-index: 1000;
+  font-size: 18px;
+  transition: background-color 0.3s;
 }
 
-.menu.activo {
-  display: flex;
+.busqueda-form button:hover {
+  background-color: #056d1a;
 }
 
-.menu li a {
-  color: black;
-  padding: 10px;
-  display: block;
-  text-decoration: none;
+/* Mapa */
+#Mapa {
+  height: 800px;
+  margin: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* Filtros */
@@ -109,8 +151,9 @@ body {
   background-color: #f4f4f4;
   flex-wrap: wrap;
 }
+
 .filtro-btn {
-  background-color: #7cb482;
+  background-color: var(--verde-principal);
   color: #000;
   border: none;
   padding: 10px 16px;
@@ -120,6 +163,8 @@ body {
   width: 155px;
   text-align: center;
   box-sizing: border-box;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .filtro-btn:hover,
@@ -127,7 +172,7 @@ body {
   background-color: #8bef64;
 }
 
-/* Ventana emergente */
+/* Ventana emergente info lugar */
 .info-lugar {
   position: fixed;
   bottom: 20px;
@@ -155,6 +200,7 @@ body {
   margin-top: 10px;
 }
 
+/* Botón cerrar */
 .btn-cerrar {
   float: right;
   background: none;
@@ -163,6 +209,7 @@ body {
   cursor: pointer;
 }
 
+/* Contenedor botones favoritos y comentarios */
 .botones-container {
   display: flex;
   justify-content: space-between;
@@ -173,7 +220,7 @@ body {
 .btn-favoritos,
 .btn-comentarios {
   flex: 1;
-  background-color: #107d36;
+  background-color: var(--verde-principal);
   color: #000;
   border: none;
   padding: 10px;
@@ -182,7 +229,15 @@ body {
   cursor: pointer;
   max-width: 50%;
   font-size: 20px;
+  transition: background-color 0.3s;
 }
+
+.btn-favoritos:hover,
+.btn-comentarios:hover {
+  background-color: #8bef64;
+}
+
+/* Modal listas favoritos y comentarios */
 .modal-lista {
   position: fixed;
   top: 0;
@@ -219,7 +274,7 @@ ul {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #107d36;
+  background-color: var(--verde-principal);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -242,36 +297,12 @@ ul {
   color: #fff;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .encabezado {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-
-  .titulo {
-    font-size: 20px;
-  }
-
-  .logo {
-    height: 35px;
-  }
-
-  .botones-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .btn-favoritos,
-  .btn-comentarios {
-    max-width: 100%;
-  }
-}
+/* Carrusel */
 .carrusel {
   display: flex;
   align-items: center;
   gap: 10px;
+  position: relative;
 }
 
 .carrusel img {
@@ -286,7 +317,7 @@ ul {
   top: 50%;
   transform: translateY(-50%);
   font-size: 2rem;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0,0,0,0.4);
   color: white;
   border: none;
   cursor: pointer;
@@ -302,7 +333,7 @@ ul {
   right: 5px;
 }
 
-
+/* Modal imagen */
 #modal-imagen {
   position: fixed;
   top: 0;
@@ -338,4 +369,54 @@ ul {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: nowrap;
+  }
+  
+  .menu {
+    width: 100%;
+  }
+  
+  .busqueda-form {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .busqueda-form input {
+    flex-grow: 1;
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .encabezado {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .titulo {
+    font-size: 20px;
+  }
+
+  .logo {
+    height: 35px;
+    margin-left: 0;
+  }
+
+  .botones-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-favoritos,
+  .btn-comentarios {
+    max-width: 100%;
+  }
 }
