@@ -1,10 +1,18 @@
+:root {
+  --verde-suave: #a9f3a1;
+  --verde-principal: #7cb482;
+  --verde-oscuro: #034317;
+  --gris-claro: #f2f2f2;
+  --texto: #1f3523;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #a9f3a1;
+  background-color: var(--gris-claro);
   text-align: center;
-  position: relative;
+  color: var(--texto);
 }
 
 #menu-btn {
@@ -17,19 +25,17 @@ body {
   cursor: pointer;
   z-index: 1100;
 }
-.hamburguesa {
-  font-size: 24px;
-  cursor: pointer;
-  margin-right: 10px;
-}
+
 .menu {
   display: none;
   flex-direction: column;
-  background-color: #b7f0ae;
+  background-color: var(--verde-suave);
   position: absolute;
   top: 50px;
   left: 0;
   z-index: 1000;
+  border-radius: 0 0 12px 0;
+  padding: 10px 20px;
 }
 
 .menu.activo {
@@ -38,37 +44,108 @@ body {
 
 .menu a {
   text-decoration: none;
-  color: #333;
-  margin: 5px 0;
-  font-weight: bold;
+  color: var(--texto);
+  margin: 6px 0;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
-.menu.show {
-  display: flex;
+.menu a:hover {
+  color: var(--verde-oscuro);
 }
 
 .container {
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
 .titulo {
-  font-size: 60px;
-  font-weight: bold;
+  font-size: 100px;
+  font-weight: 600;
   margin-bottom: 10px;
-  color: #034317;
+  color: var(--verde-oscuro);
 }
 
 .subtitulo {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 25px;
-  color: #130202;
-  margin-bottom: 20px;
+  font-size: 40px;
+  color: #444;
+  margin-bottom: 24px;
 }
 
 .logo {
-  width: 400px;
+  width: 200px;
   height: auto;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 32px;
+}
+
+.seccion-mapa {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.contenedor-imagen {
+  width: 500px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.imagen-mapa {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.btn-ir-mapa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px 16px;
+  background-color: var(--verde-principal);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 2rem;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-ir-mapa:hover {
+  background-color: #5f9967;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .titulo {
+    font-size: 36px;
+  }
+
+  .subtitulo {
+    font-size: 18px;
+  }
+
+  .contenedor-imagen {
+    width: 90%;
+    height: auto;
+  }
+
+  .imagen-mapa {
+    width: 100%;
+    height: auto;
+  }
+
+  .btn-ir-mapa {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
 }
 
