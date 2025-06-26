@@ -7,6 +7,29 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.toggle("activo");
   });
 
+  //pagina recetas solo suscriptos
+const linkRecetas = document.getElementById("linkRecetas");
+
+linkRecetas.addEventListener("click", (e) => {
+  e.preventDefault(); // evita que redirija
+
+  const usuarioActual = localStorage.getItem("usuarioActual");
+
+  if (usuarioActual) {
+    // Está suscripto → redireccionamos
+    window.location.href="/TrabajoFinal2025/Recetas/recetas.html";
+  } else {
+    // No está suscripto → mostramos mensaje
+    Swal.fire({
+  title: 'Contenido exclusivo',
+  text: 'Suscribite o inicia seccion para acceder a las recetas sin TACC.',
+  icon: 'info',
+  showCancelButton: true,
+  
+  });
+}
+});
+
   // --- Inicializar mapa Leaflet ---
   let map = L.map('Mapa').setView([-36.8955, -60.3218], 15);
 
