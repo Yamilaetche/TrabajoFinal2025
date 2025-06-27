@@ -13,19 +13,21 @@
 </head>
 <body>
 
-  <!-- Botón de menú hamburguesa -->
-  <button id="menu-btn">☰</button>
-
-  <!-- Menú desplegable -->
-  <div class="menu" id="menu">
+<nav class="navbar">
+  <div class="nav-links" id="nav-links">
     <a href="/TrabajoFinal2025/Inicio/inicio.html">Inicio</a>
     <a href="/TrabajoFinal2025/Mapa/mapa.html">Mapa</a>
-    <a href="#" id="linkRecetas">Recetas</a>
-  </div>
-  <div class="contenedor-botones">
+    <a href="#" id="linkRecetas">Receta
+      
+  <!-- Botones de usuario -->
+  <div class="nav-buttons" id="nav-buttons">
     <button id="btnLogin" class="boton iniciar">Iniciar sesión</button>
     <button id="abrirModalSuscripcion" class="boton suscribite">Para ver contenido exclusivo Suscribite!!</button>
-  </div>
+
+
+  <!-- Hamburguesa para móviles -->
+  <button class="hamburger" id="menu-toggle">☰</button>
+</nav>
 
    <!-- Modal Login -->
 <div id="modalLogin" class="modal">

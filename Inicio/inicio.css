@@ -14,6 +14,116 @@ body {
   text-align: center;
   color: var(--texto);
 }
+/* NAVBAR GENERAL */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #7cb482;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Enlaces del menú */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.nav-links a:hover {
+  background-color: #6aa470;
+  border-radius: 5px;
+}
+
+/* Botones de login/suscripción */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.boton {
+  background-color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.iniciar {
+  background-color: #f0f0f0;
+}
+
+.suscribite {
+  background-color: #ffd54f;
+}
+
+/* Botón hamburguesa */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links,
+  .nav-buttons {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #7cb482;
+  }
+
+  .nav-links a,
+  .nav-buttons .boton {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  .nav-links.active,
+  .nav-buttons.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    align-self: flex-end;
+    margin-top: -30px;
+  }
+}
+
+/* Evita que el contenido quede debajo del navbar */
+body {
+  padding-top: 80px;
+  margin: 0;
+}
+
+
 
 #menu-btn {
   position: fixed;
