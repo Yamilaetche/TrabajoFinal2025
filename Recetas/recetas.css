@@ -1,3 +1,11 @@
+/* Variables para colores */
+:root {
+  --verde-suave: #a9f3a1;
+  --verde-principal: #d3d5d4;
+  --verde-claro: #b7f0ae;
+  --verde-oscuro: #398e54;
+  --texto: #047225;
+}
 body {
   font-family: sans-serif;
   background-color: #e1eae5;
@@ -41,23 +49,55 @@ input[type="text"] {
   padding: 10px;
 }
 
+/* Botón hamburguesa */
 .hamburguesa {
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
   margin-right: 10px;
+  user-select: none;
+  z-index: 1100;
+  color: black;
 }
 
+/* Menú desplegable */
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%;  
+  left: 0;
+  background-color: var(--verde-claro);
+  flex-direction: column;
+  width: 150px;
+  max-width: 90vw;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-radius: 0 0 10px 10px;
+  z-index: 1050;
+  margin-top: 4px;
+  padding: 10px 0;
+}
 
+/* Mostrar menú */
 .menu.activo {
   display: flex;
+  flex-direction: column;
+}
+
+/* Items del menú */
+.menu li {
+  list-style: none;
 }
 
 .menu li a {
-  color: black;
-  padding: 10px;
-  text-decoration: none;
   display: block;
-   cursor: pointer;
+  padding: 10px 20px;
+  color:#398e54 ;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+  background-color: #8bef64;
 }
 
 
@@ -288,17 +328,25 @@ main {
 #resultsList li:hover {
   background-color: #f0f0f0;
 }
+ h2 {
+  margin-top: 10px;
+  color: #374151;
+  margin: 30px 0 0 20px;
+}
+
 
 #formularioReceta {
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 400px;
+  margin: 30px 0 0 20px;
 }
 
 #formularioReceta input,
 #formularioReceta textarea {
   padding: 8px;
+  margin: 30px 0 0 20px;
   border-radius: 8px;
   border: 1px solid #ccc;
 }
@@ -307,6 +355,7 @@ main {
   background-color: #a2d5ab;
   border: none;
   padding: 10px;
+  margin: 30px 0 0 20px;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -319,6 +368,7 @@ main {
 #mostrarFormulario {
   margin-top: 2em;
   padding: 10px 15px;
+   margin: 30px 0 0 20px;
   border-radius: 8px;
   background-color: #a2d5ab;
   border: none;
@@ -331,8 +381,26 @@ main {
 
 .receta {
   border: 1px solid #ccc;
-  padding: 1em;
-  margin-top: 1em;
+  padding:  10px 15px;
+  margin: 30px 0 0 20px;
   border-radius: 10px;
   background-color: #f9fff9;
+}
+.autor-receta {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.btn-editar {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-editar:hover {
+  background-color: #388e3c;
 }

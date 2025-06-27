@@ -356,18 +356,22 @@ document.getElementById("mostrarFormulario").addEventListener("click", function 
   formulario.style.display = formulario.style.display === "none" ? "block" : "none";
 });
 
-// Agregar receta al enviar formulario
-document.getElementById("formularioReceta").addEventListener("submit", function (e) {
+// Función original para agregar nuevas recetas
+function nuevaRecetaSubmit(e) {
   e.preventDefault();
 
   const titulo = document.getElementById("titulo").value;
   const ingredientes = document.getElementById("ingredientes").value;
   const pasos = document.getElementById("pasos").value;
+  const autor = localStorage.getItem("usuarioActual");
+  const id = crypto.randomUUID(); // ID único para cada receta
 
   const receta = {
     titulo,
     ingredientes,
-    pasos
+    pasos,
+    autor,
+    id
   };
 
   guardarReceta(receta);
@@ -375,7 +379,11 @@ document.getElementById("formularioReceta").addEventListener("submit", function 
 
   e.target.reset();
   document.getElementById("formularioReceta").style.display = "none";
-});
+}
+
+// Asignar función de envío inicial
+const form = document.getElementById("formularioReceta");
+form.addEventListener("submit", nuevaRecetaSubmit);
 
 // Guarda receta en localStorage
 function guardarReceta(receta) {
@@ -387,14 +395,68 @@ function guardarReceta(receta) {
 // Muestra una receta en pantalla
 function mostrarReceta(receta) {
   const contenedor = document.getElementById("recetasUsuario");
+  const usuarioActual = localStorage.getItem("usuarioActual");
+
   const nueva = document.createElement("div");
   nueva.classList.add("receta");
+
   nueva.innerHTML = `
     <h3>${receta.titulo}</h3>
     <p><strong>Ingredientes:</strong> ${receta.ingredientes}</p>
     <p><strong>Pasos:</strong> ${receta.pasos}</p>
+    <p class="autor-receta">Subida por: <em>${receta.autor}</em></p>
   `;
+
+  // Mostrar botón de editar solo si es del usuario actual
+  if (receta.autor === usuarioActual) {
+    const btnEditar = document.createElement("button");
+    btnEditar.textContent = "Editar receta";
+    btnEditar.classList.add("btn-editar");
+    btnEditar.addEventListener("click", () => editarReceta(receta.id));
+    nueva.appendChild(btnEditar);
+  }
+
   contenedor.appendChild(nueva);
+}
+
+// Editar una receta existente
+function editarReceta(id) {
+  let recetas = JSON.parse(localStorage.getItem("recetasUsuario")) || [];
+  const receta = recetas.find(r => r.id === id);
+  if (!receta) return;
+
+  // Mostrar valores actuales en el formulario
+  document.getElementById("titulo").value = receta.titulo;
+  document.getElementById("ingredientes").value = receta.ingredientes;
+  document.getElementById("pasos").value = receta.pasos;
+
+  const form = document.getElementById("formularioReceta");
+  form.style.display = "block";
+
+  // Eliminar función anterior
+  form.removeEventListener("submit", nuevaRecetaSubmit);
+
+  // Nueva función para guardar edición
+  form.onsubmit = function (e) {
+    e.preventDefault();
+
+    receta.titulo = document.getElementById("titulo").value;
+    receta.ingredientes = document.getElementById("ingredientes").value;
+    receta.pasos = document.getElementById("pasos").value;
+
+    localStorage.setItem("recetasUsuario", JSON.stringify(recetas));
+
+    // Refrescar la lista
+    document.getElementById("recetasUsuario").innerHTML = "";
+    recetas.forEach(mostrarReceta);
+
+    form.reset();
+    form.style.display = "none";
+
+    // Restaurar función original
+    form.onsubmit = null;
+    form.addEventListener("submit", nuevaRecetaSubmit);
+  };
 }
 
 // Al cargar la página, mostrar recetas guardadas
@@ -402,4 +464,6 @@ window.addEventListener("DOMContentLoaded", function () {
   const recetas = JSON.parse(localStorage.getItem("recetasUsuario")) || [];
   recetas.forEach(mostrarReceta);
 });
+
+
 
