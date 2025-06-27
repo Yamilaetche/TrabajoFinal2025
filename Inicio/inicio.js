@@ -9,18 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.classList.toggle("active");
     navButtons.classList.toggle("active");
   });
-});
-
-
-   document.addEventListener("DOMContentLoaded", () => {
-  const boton = document.getElementById("menu-btn");
-  const menu = document.getElementById("menu");
-
-  if (boton && menu) {
-    boton.addEventListener("click", () => {
-    menu.classList.toggle('activo');
-    });
-  }
+  
 
 //pagina recetas solo suscriptos
 const linkRecetas = document.getElementById("linkRecetas");
