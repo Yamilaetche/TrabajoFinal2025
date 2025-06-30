@@ -1,8 +1,113 @@
-CeliRadar 
-Tu guia segura ¡LIBRE DE GLUTEN! cerca tuyo
+📍 CeliRadar: Tu guía segura ¡LIBRE DE GLUTEN! cerca tuyo
 
-Es una aplicacion movil y web que le ofrece al usuario el acceso a traves de un mapa interactivo, en el que va a encontrar diferentes negocios(restaurantes, mercados, dieteticas, cafes, etc. En los que el usuario va a poder comprar o consumir productos libres de gluten.
-Este proyecto cuenta con tres pantallas diferentes en las que el usuario ademas de crear una cuenta y acceder a un mapa personalizado, tambien va a tener acceso a una seccion en la que podra encontrar, recetas, tips y consejos para poder tener una mejor calidad de vida.
-Actualmente el proyecto se encuentra en una etapa beta, por lo que agradecemos si nos hacen una buena review.
+CeliRadar es una aplicación móvil y web diseñada especialmente para personas con celiaquismo. Permite encontrar fácilmente lugares en Olavarría que ofrecen productos sin TACC (Trigo, Avena, Cebada y Centeno) a través de un mapa interactivo y funciones pensadas para mejorar la experiencia libre de gluten. 
+
+📝 Descripción
+
+El objetivo principal de este proyecto es ayudar a las personas celíacas a encontrar locales seguros para consumir alimentos sin TACC. CeliRadar conecta a los usuarios con restaurantes, cafés, mercados y otros espacios, permitiendo también dejar reseñas, acceder a recetas exclusivas y más.
+
+🚀 Funcionalidades principales
+
+🌍 Mapa interactivo centrado en la ubicación actual del usuario.
+
+📌 Marcadores de locales sin TACC (restaurantes, mercados, cafés, etc).
+
+🔍 Filtros por tipo de lugar.
+
+🗺️ Detalles de cada lugar (nombre, dirección, menú, etc).
+
+⭐ Reseñas con estrellas y comentarios de usuarios.
+
+📋 Página de recetas y consejos exclusiva para usuarios registrados.
+
+🔐 Sistema de login para usuarios.
+
+❤️ Favoritos personalizados.
+
+
+🔧 Instalación
+
+Clona el repositorio
+
+git clone https://github.com/tu-usuario/celiradar.git
+cd celiradar
+
+Instala las dependencias
+
+Web (React o HTML/JS/CSS):
+
+npm install
+
+Mobile (React Native o Flutter):
+Sigue la guía de instalación correspondiente a tu stack.
+
+Ejecuta en modo desarrollo
+
+npm start
+
+📱 Uso
+
+1. Abre la app o accede a la web.
+
+
+2. Regístrate como usuario para dejar comentarios o ver recetas.
+
+
+3. Usa el mapa para explorar lugares sin TACC cerca tuyo.
+
+
+4. Dejá una reseña y compartí tu experiencia con la comunidad.
+
+
+5. Guardá tus locales favoritos.
+
+
+6. Accedé a recetas aptas desde la pestaña correspondiente.
+
+🤝 Contribuir
+
+¿Querés colaborar? ¡Genial! Seguí estos pasos:
+
+1. Hacé un fork del proyecto
+
+
+2. Creá una rama: git checkout -b nueva-funcionalidad
+
+
+3. Realizá tus cambios y commiteá: git commit -m 'Agrega nueva funcionalidad'
+
+
+4. Subí los cambios: git push origin nueva-funcionalidad
+
+
+5. Creá un Pull Request
+
+📄 Licencia
+
+Este proyecto está bajo la licencia MIT. Ver archivo LICENSE para más información.
+
+
+📬 Contacto
+
+Desarrolladoras:
+
+Natalia Mansilla
+
+Yamila Etchegaray
+
+Silvana Sarmiento
+
+
+Ciudad: Olavarría, Argentina
+
+🔗 Links importantes
+
+🔗 Proyecto en Jira
+
+🌐 Página Web: (Próximamente)
+
+📱 App Store / Google Play: (Próximamente) 
+
+¡Gracias por apoyar este proyecto que busca mejorar la calidad de vida de las personas celíacas 💚!
 
 https://drive.google.com/drive/folders/1NWlIDZvuL_t45yg2puL7NeVs7q1cnI2n
