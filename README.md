@@ -1,3 +1,4 @@
+
 📍 CeliRadar: Tu guía segura ¡LIBRE DE GLUTEN! cerca tuyo
 
 CeliRadar es una aplicación móvil y web diseñada especialmente para personas con celiaquismo. Permite encontrar fácilmente lugares en Olavarría que ofrecen productos sin TACC (Trigo, Avena, Cebada y Centeno) a través de un mapa interactivo y funciones pensadas para mejorar la experiencia libre de gluten. 
@@ -62,25 +63,7 @@ npm start
 5. Guardá tus locales favoritos.
 
 
-6. Accedé a recetas aptas desde la pestaña correspondiente.
-
-🤝 Contribuir
-
-¿Querés colaborar? ¡Genial! Seguí estos pasos:
-
-1. Hacé un fork del proyecto
-
-
-2. Creá una rama: git checkout -b nueva-funcionalidad
-
-
-3. Realizá tus cambios y commiteá: git commit -m 'Agrega nueva funcionalidad'
-
-
-4. Subí los cambios: git push origin nueva-funcionalidad
-
-
-5. Creá un Pull Request
+6. Accedé a recetas aptas desde la pestaña correspondiente. 
 
 📄 Licencia
 
@@ -102,7 +85,10 @@ Ciudad: Olavarría, Argentina
 
 🔗 Links importantes
 
+https://drive.google.com/drive/folders/1NWlIDZvuL_t45yg2puL7NeVs7q1cnI2n
+m
 🔗 Proyecto en Jira
+
 
 🌐 Página Web: (Próximamente)
 
@@ -110,4 +96,4 @@ Ciudad: Olavarría, Argentina
 
 ¡Gracias por apoyar este proyecto que busca mejorar la calidad de vida de las personas celíacas 💚!
 
-https://drive.google.com/drive/folders/1NWlIDZvuL_t45yg2puL7NeVs7q1cnI2n
+
