@@ -86,9 +86,9 @@ Ciudad: Olavarría, Argentina
 🔗 Links importantes
 
 https://drive.google.com/drive/folders/1NWlIDZvuL_t45yg2puL7NeVs7q1cnI2n
-m
-🔗 Proyecto en Jira
 
+🔗 Proyecto en Jira
+https://yamietche2025.atlassian.net/jira/software/projects/SCRUM/boards/1
 
 🌐 Página Web: (Próximamente)
 
