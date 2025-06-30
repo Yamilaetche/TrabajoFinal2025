@@ -30,7 +30,7 @@ El objetivo principal de este proyecto es ayudar a las personas celíacas a enco
 
 Clona el repositorio
 
-git clone https://github.com/tu-usuario/celiradar.git
+git clone https://github.com/Yamilaetche/TrabajoFinal2025.git
 cd celiradar
 
 Instala las dependencias
@@ -89,6 +89,10 @@ https://drive.google.com/drive/folders/1NWlIDZvuL_t45yg2puL7NeVs7q1cnI2n
 
 🔗 Proyecto en Jira
 https://yamietche2025.atlassian.net/jira/software/projects/SCRUM/boards/1
+
+
+🔗Proyecto en Git
+https://github.com/Yamilaetche/TrabajoFinal2025.git
 
 🌐 Página Web: (Próximamente)
 
