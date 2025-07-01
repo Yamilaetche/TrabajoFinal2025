@@ -7,82 +7,69 @@
   --texto: #047225;
 }
 body {
-  font-family: sans-serif;
-  background-color: #e1eae5;
-  margin: 0;
-  padding: 0;
+   margin: 0;
+  padding-bottom: 120px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background-image: url('Fotos para pagina/fondo1.jpg');
+  background-size: cover; /* ajusta la imagen al tamaño del body */
+  background-repeat: no-repeat; /* evita que se repita */
+  background-position: center center; /* centra la imagen */
+  overflow-x: hidden;
 }
 
-header {
-  background-color: #a7d7b8;
-  color: #1f2937;
-  text-align: center;
-  padding: 20px;
-}
 
-nav {
+/* Encabezado con título a la izquierda y logo a la derecha */
+.encabezado {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 15px;
-  background-color: #c8e6c9;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-.logo {
-  height: 150px;
-  margin-left: 150px;
-  
-}
-
-.navbar {
-  position: relative;
-  display: flex;
-  background-color: #a7d7b8;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 15px 20px;
 }
 
-/* Botón hamburguesa */
+.titulo {
+  font-size: 32px;
+  margin: 0;
+}
+
+.logo {
+   height: 120px;
+  width: auto;
+  margin-left: 30%;
+}
+
+/* Navbar con hamburguesa a la izquierda y buscador a la derecha */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+ 
+}
+
 .hamburguesa {
-  font-size: 28px;
+  font-size: 24px;
   cursor: pointer;
-  margin-right: 10px;
-  user-select: none;
-  z-index: 1100;
   color: black;
 }
 
-/* Menú desplegable */
+/* Menú hamburguesa */
 .menu {
   display: none;
   position: absolute;
-  top: 100%;  
-  left: 0;
+  top: 100%;
+  left: 10px;
   background-color: var(--verde-claro);
-  flex-direction: column;
-  width: 150px;
-  max-width: 90vw;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  border-radius: 0 0 10px 10px;
-  z-index: 1050;
-  margin-top: 4px;
+  border-radius: 8px;
   padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-/* Mostrar menú */
 .menu.activo {
   display: flex;
   flex-direction: column;
 }
 
-/* Items del menú */
 .menu li {
   list-style: none;
 }
@@ -90,14 +77,64 @@ input[type="text"] {
 .menu li a {
   display: block;
   padding: 10px 20px;
-  color:#398e54 ;
   text-decoration: none;
+  color: #398e54;
   font-weight: 600;
-  transition: background-color 0.3s;
 }
 
 .menu li a:hover {
   background-color: #8bef64;
+}
+
+/* Buscador*/
+.busqueda-form {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 0;
+}
+
+.busqueda-form input {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+  outline: none;
+  width: 10%;
+  margin: 0;
+}
+
+
+.busqueda-form button {
+  padding: 6px 12px;
+  border: none;
+  background-color: var(--verde-oscuro);
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+  margin: 0;
+}
+.busqueda-form button:hover {
+  background-color: #056d1a;
+}
+
+/* Subtítulos centrados */
+.subtitulo {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.subtitulo h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.subtitulo h3 {
+  font-size: 18px;
+  font-weight: normal;
+  color: #0c501e;
 }
 
 
@@ -302,32 +339,14 @@ main {
   border: 1px solid #ccc;
 }
 
-.receta-encontrada {
-  background: #f8f8f8;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-radius: 8px;
-}
+
 #searchInput {
   width: 50%;
   padding: 10px;
   margin-bottom: 10px;
 }
 
-#resultsList {
-  list-style: none;
-  padding: 0;
-}
 
-#resultsList li {
-  padding: 8px;
-  border-bottom: 1px solid #ccc;
-  cursor: pointer;
-}
-
-#resultsList li:hover {
-  background-color: #f0f0f0;
-}
  h2 {
   margin-top: 10px;
   color: #374151;
@@ -348,11 +367,11 @@ main {
   padding: 8px;
   margin: 30px 0 0 20px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #7e817e;
 }
 
 #formularioReceta button {
-  background-color: #a2d5ab;
+  background-color:#979997 ;
   border: none;
   padding: 10px;
   margin: 30px 0 0 20px;
@@ -362,7 +381,7 @@ main {
 }
 
 #formularioReceta button:hover {
-  background-color: #7bcf8a;
+  background-color: #686968;
 }
 
 #mostrarFormulario {
@@ -370,7 +389,8 @@ main {
   padding: 10px 15px;
    margin: 30px 0 0 20px;
   border-radius: 8px;
-  background-color: #a2d5ab;
+  background-color: #4caf50;
+  color: white;
   border: none;
   cursor: pointer;
 }
@@ -391,7 +411,7 @@ main {
   color: #555;
 }
 
-.btn-editar {
+.btn-editar  {
   margin-top: 10px;
   padding: 6px 12px;
   background-color: #4caf50;
@@ -402,5 +422,31 @@ main {
 }
 
 .btn-editar:hover {
+  background-color: #388e3c;
+}
+
+.agregar{
+   margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.agregar:hover {
+  background-color: #388e3c;
+}
+.btn-eliminar {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
   background-color: #388e3c;
 }

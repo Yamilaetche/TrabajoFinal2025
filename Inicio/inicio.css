@@ -13,45 +13,124 @@ body {
   background-color: var(--gris-claro);
   text-align: center;
   color: var(--texto);
+   background-image: url('Logo/fondo1.jpg');
+  background-size: cover; /* ajusta la imagen al tamaño del body */
+  background-repeat: no-repeat; /* evita que se repita */
+  background-position: center center; /* centra la imagen */
 }
 
-#menu-btn {
-  position: fixed;
-  top: 15px;
-  left: 15px; 
+/* Header */
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000;
+}
+
+.titulo {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.logo {
+  height: 120px;
+  width: auto;
+  margin-left: 30%;
+}
+
+/* Navbar */
+.navbar {
+  position: relative; /* para menú absoluto */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+/* Botón hamburguesa */
+.hamburguesa {
   font-size: 28px;
-  background: none;
-  border: none;
   cursor: pointer;
+  margin-right: 10px;
+  user-select: none;
   z-index: 1100;
+  color: black;
 }
 
+/* Menú desplegable */
 .menu {
   display: none;
-  flex-direction: column;
-  background-color: var(--verde-suave);
   position: absolute;
-  top: 50px;
+  top: 100%;  
   left: 0;
-  z-index: 1000;
-  border-radius: 0 0 12px 0;
-  padding: 10px 20px;
+  background-color: var(--verde-claro);
+  flex-direction: column;
+  width: 150px;
+  max-width: 90vw;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-radius: 0 0 10px 10px;
+  z-index: 1050;
+  margin-top: 4px;
+  padding: 10px 0;
 }
 
+/* Mostrar menú */
 .menu.activo {
   display: flex;
+  flex-direction: column;
 }
 
-.menu a {
-  text-decoration: none;
-  color: var(--texto);
-  margin: 6px 0;
-  font-weight: 600;
-  transition: color 0.3s;
+/* Items del menú */
+.menu li {
+  list-style: none;
 }
 
-.menu a:hover {
+.menu li a {
+  display: block;
+  padding: 10px 20px;
   color: var(--verde-oscuro);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+  background-color: #8bef64;
+}
+
+/* Formulario de búsqueda */
+.busqueda-form {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.busqueda-form input {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+  outline: none;
+  width: 200px;
+}
+
+.busqueda-form button {
+  padding: 6px 12px;
+  border: none;
+  background-color: var(--verde-oscuro);
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.busqueda-form button:hover {
+  background-color: #056d1a;
 }
 
 .container {
@@ -265,27 +344,26 @@ body {
   cursor: pointer;
   color: #666;
 }
-
-
-
-#cerrarSesion {
-  position: fixed;         /* Lo hace flotar en pantalla */
-  bottom: 20px;            /* Separación desde abajo */
-  right: 20px;             /* Separación desde la derecha */
-  padding: 12px 24px;
-  background-color: #81c784;
-  border: none;
-  border-radius: 25px;
+.recetas{
+  background-color: #00c851;
   color: white;
   font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: background-color 0.3s, transform 0.3s;
-  z-index: 1500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-#cerrarSesion:hover {
+.recetas:hover {
+  background-color: #66bb6a;
+  transform: scale(1.05);
+}
+
+.cerrarSesion {
+  background-color: #00c851;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.cerrarSesion:hover {
   background-color: #66bb6a;
   transform: scale(1.05);
 }
