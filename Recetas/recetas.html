@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<<<<<<< HEAD
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recetas | CeliRadar</title>
@@ -9,16 +9,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+=======
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CeliRadar</title>
+  <link rel="stylesheet" href="recetas.css" />
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+>>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
 </head>
+
 <body>
+<<<<<<< HEAD
 
   <!-- HEADER CON LOGO Y TÍTULO -->
 <header class="encabezado">
   <h1 class="titulo">CeliRadar</h1>
   <img src="/Recetas/Fotos para pagina/logo.png" alt="Logo" class="logo" />
 </header>
+=======
+>>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
 
+  <header class="encabezado">
+    <h1 class="titulo">CeliRadar</h1>
+    <img src="Fotos para pagina/logo.png" alt="Logo" class="logo" />
+  </header>
 
+<<<<<<< HEAD
 
   <!-- NAVBAR GENERAL -->
  <nav class="navbar">
@@ -39,6 +55,60 @@
 
  
 </nav>
+=======
+ 
+  <nav class="navbar">
+    <div class="hamburguesa" id="boton-menu">☰</div>
+
+    <ul class="menu" id="menu">     
+      <li><a href="/TrabajoFinal2025/Inicio/inicio.html">Inicio</a></li>
+      <li><a href="/TrabajoFinal2025/Mapa/mapa.html">Mapa</a></li>
+      <li><a href="#" id="linkRecetas">Recetas</a></li>
+    </ul>
+
+    <form class="busqueda-form">
+      <input type="text" id="searchInput" placeholder="Buscar receta o ingrediente..." />
+      <button type="submit">🔍</button>
+    </form>
+  </nav>
+
+  <div class="subtitulo">
+    <h2>Recetas Sin TACC</h2>
+    <h3>Seleccioná una categoría para ver recetas libres de gluten</h3>
+  </div>
+
+  <nav>
+    <div class="carrusel-container">
+    <button class="arrow left" id="flecha-izquierda">&#10094;</button>
+    <div class="carrusel" id="carrusel">
+    
+    <img src="Fotos para pagina/PASTAS.jpg" data-categoria="pastas" alt="Pastas" />
+    <img src="Fotos para pagina/dulces y tortas.jpg" data-categoria="tortasYdulces" alt="Tortas y dulces" />
+    <img src="Fotos para pagina/Panes1.jpg" data-categoria="panes" alt="Panes" />
+    <img src="Fotos para pagina/Masas.jpg" data-categoria="masas" alt="Masas" />
+    </div>
+     <button class="arrow right" id="flecha-derecha">&#10095;</button>
+</div>
+
+
+  </nav>
+        <div id="recetas-container"></div>
+
+<!-- Botón para abrir el formulario -->
+<button id="mostrarFormulario">➕ Agregar receta</button>
+
+<!-- Formulario oculto para agregar una receta -->
+<form id="formularioReceta" style="display: none; margin-top: 1em;">
+  <input type="text" id="titulo" placeholder="Ej: Pan sin gluten" required>
+  <textarea id="ingredientes" placeholder="Ej: Ingredientes: 2 tazas de harina de arroz..." required></textarea>
+  <textarea id="pasos" placeholder="Ej: Pasos: Mezclar los ingredientes..." required></textarea>
+  <button type="submit" class="agregar">Agregar</button>
+</form>
+
+<!-- Acá se insertarán las nuevas recetas -->
+ <h2> Recetas de Usuarios</h2>
+<div id="recetasUsuario"></div>
+>>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
 
 
   <!-- Resultados de búsqueda -->

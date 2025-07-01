@@ -9,26 +9,81 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.classList.toggle("active");
     navButtons.classList.toggle("active");
   });
-});
+  
 
+  // Referencias a botones
+  const btnLogin = document.getElementById("btnLogin");
+  const btnSuscribite = document.getElementById("btnSuscribite");
+  const btnCerrarSesion = document.getElementById("btnCerrarSesion");
+  const btnIrARecetas = document.getElementById("btnIrARecetas");
+  const linkRecetas = document.getElementById("linkRecetas");
+  const btnRegistrarse = document.getElementById("registrarse");
+  const modalLogin = document.getElementById("modalLogin");
+  const modalSuscripcion = document.getElementById("modal");
+  const cerrarLogin = document.getElementById("cerrarLogin");
+  const cerrarModalSuscripcion = document.getElementById("cerrarModal");
 
-   document.addEventListener("DOMContentLoaded", () => {
-  const boton = document.getElementById("menu-btn");
-  const menu = document.getElementById("menu");
+  // Recuperar usuarios y usuario actual
+  let usuarios = JSON.parse(localStorage.getItem("suscriptos")) || [];
+  let usuarioActual = localStorage.getItem("usuarioActual");
 
-  if (boton && menu) {
-    boton.addEventListener("click", () => {
-    menu.classList.toggle('activo');
-    });
+  // Mostrar modales
+  btnLogin.addEventListener("click", () => {
+    modalLogin.style.display = "flex";
+  });
+
+  btnSuscribite.addEventListener("click", () => {
+    modalSuscripcion.style.display = "flex";
+  });
+
+  // Cerrar modales
+  cerrarLogin.addEventListener("click", () => {
+    modalLogin.style.display = "none";
+  });
+
+  cerrarModalSuscripcion.addEventListener("click", () => {
+    modalSuscripcion.style.display = "none";
+  });
+
+ // Mostrar u ocultar botones según sesión
+  if (usuarioActual) {
+    if (btnLogin) btnLogin.style.display = "none";
+    if (btnSuscribite) btnSuscribite.style.display = "none";
+    if (btnCerrarSesion) btnCerrarSesion.style.display = "inline-block";
+    if (btnIrARecetas) btnIrARecetas.style.display = "inline-block";
+
+    if (btnCerrarSesion) {
+      btnCerrarSesion.addEventListener("click", () => {
+        Swal.fire({
+          title: '¿Cerrar sesión?',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonText: 'Sí, cerrar',
+          cancelButtonText: 'Cancelar',
+          confirmButtonColor: '#66bb6a'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            localStorage.removeItem("usuarioActual");
+            Swal.fire({
+              title: 'Sesión cerrada',
+              icon: 'success',
+              confirmButtonColor: '#66bb6a'
+            }).then(() => location.reload());
+          }
+        });
+      });
+    }
+
+    if (btnIrARecetas) {
+      btnIrARecetas.addEventListener("click", () => {
+        window.location.href = "/TrabajoFinal2025/Recetas/recetas.html";
+      });
+    }
   }
-
-//pagina recetas solo suscriptos
-const linkRecetas = document.getElementById("linkRecetas");
-
-linkRecetas.addEventListener("click", (e) => {
+ 
+  // Evento para link "Recetas" del menú
+  linkRecetas.addEventListener("click", (e) => {
   e.preventDefault(); // evita que redirija
-
-  const usuarioActual = localStorage.getItem("usuarioActual");
 
   if (usuarioActual) {
     // Está suscripto → redireccionamos
@@ -45,41 +100,11 @@ linkRecetas.addEventListener("click", (e) => {
   confirmButtonColor: '#66bb6a'
 }).then((result) => {
   if (result.isConfirmed) {
-    document.getElementById("modal").style.display = "flex";
+     modalSuscripcion.style.display = "flex";
   }
 });
 }
 });
-
-  // Referencias a botones
-  const btnLogin = document.getElementById("btnLogin");
-  const modalLogin = document.getElementById("modalLogin");
-  const btnAbrirSuscripcion = document.getElementById("abrirModalSuscripcion");
-  const modalSuscripcion = document.getElementById("modal");
-  const cerrarLogin = document.querySelector("#modalLogin .cerrar");
-  const cerrarModalSuscripcion = document.getElementById("cerrarModal");
-
-  // Mostrar modales
-  btnLogin.addEventListener("click", () => {
-    modalLogin.style.display = "flex";
-  });
-
-  btnAbrirSuscripcion.addEventListener("click", () => {
-    modalSuscripcion.style.display = "flex";
-  });
-
-  // Cerrar modales
-  cerrarLogin.addEventListener("click", () => {
-    modalLogin.style.display = "none";
-  });
-
-  cerrarModalSuscripcion.addEventListener("click", () => {
-    modalSuscripcion.style.display = "none";
-  });
-
-  // Recuperar usuarios y usuario actual
-  let usuarios = JSON.parse(localStorage.getItem("suscriptos")) || [];
-  let usuarioActual = localStorage.getItem("usuarioActual");
 
   // Validar email
   function emailValido(email) {
@@ -94,7 +119,9 @@ linkRecetas.addEventListener("click", (e) => {
     const email = loginForm.querySelector("input[type='email']").value.trim().toLowerCase();
     const password = loginForm.querySelector("input[type='password']").value;
 
+    let usuarios = JSON.parse(localStorage.getItem("suscriptos")) || [];
     const usuario = usuarios.find(u => u.email === email && u.password === password);
+
 
     if (!emailValido(email)) {
       Swal.fire({
@@ -131,10 +158,22 @@ linkRecetas.addEventListener("click", (e) => {
   });
 
   // REGISTRO
-  const btnRegistrarse = document.getElementById("registrarse");
+  if (btnRegistrarse) {
   btnRegistrarse.addEventListener("click", () => {
+  const nombre = document.getElementById("nombre").value.trim();
+  const apellido = document.getElementById("apellido").value.trim();
     const email = document.getElementById("email").value.trim().toLowerCase();
     const password = document.getElementById("password").value.trim();
+
+     if (!nombre || !apellido) {
+    Swal.fire({
+      title: 'Faltan datos',
+      text: 'Completá tu nombre y apellido.',
+      icon: 'warning',
+      confirmButtonColor: '#66bb6a'
+    });
+    return;
+  }
 
     if (!emailValido(email)) {
       Swal.fire({
@@ -165,7 +204,7 @@ linkRecetas.addEventListener("click", (e) => {
         confirmButtonColor: '#66bb6a'
       });
     } else {
-      usuarios.push({ email, password });
+      usuarios.push({ email, password, nombre, apellido });
       localStorage.setItem("suscriptos", JSON.stringify(usuarios));
       localStorage.setItem("usuarioActual", email);
 
@@ -180,31 +219,7 @@ linkRecetas.addEventListener("click", (e) => {
       });
     }
   });
-
-  // Mostrar botón de cerrar sesión si está logueado
-  const btnCerrarSesion = document.getElementById("cerrarSesion");
-  if (usuarioActual && btnCerrarSesion) {
-    btnCerrarSesion.style.display = "inline-block";
-    btnCerrarSesion.addEventListener("click", () => {
-      Swal.fire({
-        title: '¿Cerrar sesión?',
-        icon: 'question',
-        showCancelButton: true,
-        confirmButtonText: 'Sí, cerrar',
-        cancelButtonText: 'Cancelar',
-        confirmButtonColor: '#66bb6a'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          localStorage.removeItem("usuarioActual");
-          Swal.fire({
-            title: 'Sesión cerrada',
-            icon: 'success',
-            confirmButtonColor: '#66bb6a'
-          }).then(() => location.reload());
-        }
-      });
-    });
-  }
-});
-
+   }
+   }); 
+ 
  

@@ -8,6 +8,7 @@
 }
 
 body {
+<<<<<<< HEAD
   font-family: Arial, Helvetica, sans-serif;
   background-color: #e1eae5;
   margin: 0;
@@ -125,10 +126,136 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s;
+=======
+   margin: 0;
+  padding-bottom: 120px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background-image: url('Fotos para pagina/fondo1.jpg');
+  background-size: cover; /* ajusta la imagen al tamaño del body */
+  background-repeat: no-repeat; /* evita que se repita */
+  background-position: center center; /* centra la imagen */
+  overflow-x: hidden;
+}
+
+
+/* Encabezado con título a la izquierda y logo a la derecha */
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.titulo {
+  font-size: 32px;
+  margin: 0;
+}
+
+.logo {
+   height: 120px;
+  width: auto;
+  margin-left: 30%;
+}
+
+/* Navbar con hamburguesa a la izquierda y buscador a la derecha */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+ 
+}
+
+.hamburguesa {
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+}
+
+/* Menú hamburguesa */
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  background-color: var(--verde-claro);
+  border-radius: 8px;
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.menu.activo {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #398e54;
+  font-weight: 600;
+>>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
 }
 
 .busqueda-form button:hover {
   background-color: #056d1a;
+}
+
+/* Buscador*/
+.busqueda-form {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 0;
+}
+
+.busqueda-form input {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+  outline: none;
+  width: 10%;
+  margin: 0;
+}
+
+
+.busqueda-form button {
+  padding: 6px 12px;
+  border: none;
+  background-color: var(--verde-oscuro);
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+  margin: 0;
+}
+.busqueda-form button:hover {
+  background-color: #056d1a;
+}
+
+/* Subtítulos centrados */
+.subtitulo {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.subtitulo h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.subtitulo h3 {
+  font-size: 18px;
+  font-weight: normal;
+  color: #0c501e;
 }
 
 
@@ -277,7 +404,48 @@ main {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
+<<<<<<< HEAD
 /* FORMULARIO RECETA */
+=======
+
+.receta h3 {
+  margin-top: 10px;
+  color: #374151;
+}
+
+.receta ul {
+  padding-left: 20px;
+}
+
+.receta p {
+  font-size: 14px;
+}
+ 
+#buscador {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 1em;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+
+#searchInput {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+ h2 {
+  margin-top: 10px;
+  color: #374151;
+  margin: 30px 0 0 20px;
+}
+
+
+>>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
 #formularioReceta {
   display: flex;
   flex-direction: column;
@@ -290,12 +458,16 @@ main {
 #formularioReceta textarea {
   padding: 10px;
   border-radius: 8px;
+<<<<<<< HEAD
   border: 1px solid #ccc;
   font-family: inherit;
+=======
+  border: 1px solid #7e817e;
+>>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
 }
 
 #formularioReceta button {
-  background-color: #a2d5ab;
+  background-color:#979997 ;
   border: none;
   padding: 10px;
   border-radius: 8px;
@@ -303,14 +475,15 @@ main {
 }
 
 #formularioReceta button:hover {
-  background-color: #7bcf8a;
+  background-color: #686968;
 }
 
 #mostrarFormulario {
   margin: 30px 20px 10px;
   padding: 10px 15px;
   border-radius: 8px;
-  background-color: #a2d5ab;
+  background-color: #4caf50;
+  color: white;
   border: none;
   cursor: pointer;
 }
@@ -319,7 +492,23 @@ main {
   background-color: #7bcf8a;
 }
 
+<<<<<<< HEAD
 .btn-editar {
+=======
+.receta {
+  border: 1px solid #ccc;
+  padding:  10px 15px;
+  margin: 30px 0 0 20px;
+  border-radius: 10px;
+  background-color: #f9fff9;
+}
+.autor-receta {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.btn-editar  {
+>>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
   margin-top: 10px;
   padding: 6px 12px;
   background-color: #4caf50;
@@ -333,6 +522,7 @@ main {
   background-color: #388e3c;
 }
 
+<<<<<<< HEAD
 /* FOOTER */
 .footer {
   background-color: var(--verde-principal);
@@ -443,3 +633,30 @@ form button[type="submit"] {
 }
 
 
+=======
+.agregar{
+   margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.agregar:hover {
+  background-color: #388e3c;
+}
+.btn-eliminar {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background-color: #388e3c;
+}
+>>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
