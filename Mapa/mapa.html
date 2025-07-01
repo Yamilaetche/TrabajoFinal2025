@@ -7,32 +7,36 @@
   <link rel="stylesheet" href="mapa.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+
   <header class="encabezado">
     <h1 class="titulo">CeliRadar</h1>
     <img src="./imagenes/celiradar (1)-modified (1).png" alt="Logo" class="logo" />
   </header>
 
-  <!--Menú hamburguesa-->
-  <nav class="navbar">
-    <div class="hamburguesa" id="boton-menu">☰</div>
-    <ul class="menu" id="menu">
-      <li><a href="/Inicio/inicio.html">Inicio</a></li>
-      <li><a href="/Mapa/mapa.html">Mapa</a></li>
-      <li><a href="#" id="linkRecetas">Recetas</a></li>
-    </ul>
 
-  <!--Buscador-->
-    <form class="busqueda-form">
-      <input type="text" placeholder="Buscar lugares sin TACC" id="busqueda-input" />
-      <button type="submit">🔍</button>
-    </form>
-  </nav>
+ <nav class="navbar">
+  <div class="nav-links" id="nav-links">
+    <a href="../Inicio/inicio.html">Inicio</a>
+    <a href="mapa.html">Mapa</a>
+    <a href="../Recetas/recetas.html">Recetas</a>
+  </div>
 
-  <!--Filtros-->
+  <!-- Buscador -->
+  <form class="busqueda-form" id="busqueda-form">
+    <input type="text" placeholder="Buscar lugares sin TACC" id="busqueda-input" />
+    <button type="submit">🔍</button>
+  </form>
+
+  <!-- Menú hamburguesa -->
+  <button class="hamburger" id="menu-toggle">☰</button>
+</nav>
+
+
+
+  <!-- Filtros -->
   <div class="filtros-container">
     <button class="filtro-btn" data-tipo="restaurante">🍽️ Restaurantes</button>
     <button class="filtro-btn" data-tipo="cafe">☕ Cafés</button>
@@ -56,8 +60,8 @@
       <button id="guardar-comentario">💾 Guardar Comentario</button>
       <ul id="lista-comentarios"></ul>
     </div>
-  
-    <!--Carrusel Imágenes-->
+
+    <!-- Carrusel Imágenes -->
     <div class="carrusel">
       <button id="prev" class="arrow left">←</button>
       <img id="info-imagen" src="" alt="Imagen del lugar" />
@@ -98,8 +102,11 @@
 
   <footer class="footer"></footer>
 
+  <!-- Librerías -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="mapa.js"></script>
+
 </body>
 </html>
+
 
