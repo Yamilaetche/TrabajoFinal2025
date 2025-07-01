@@ -498,5 +498,48 @@ window.addEventListener("DOMContentLoaded", function () {
   recetas.forEach(mostrarReceta);
 });
 
+ //SCRIPT NAVBAR MOVIL
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+      toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    });
+  //FOOTER
+  document.addEventListener("DOMContentLoaded", () => {
+  const abrirBtn = document.getElementById("abrirModalContacto");
+  const modal = document.getElementById("modalContacto");
+  const cerrarBtn = document.getElementById("cerrarModalContacto");
+  const form = document.getElementById("formContacto");
+
+  // Abrir modal
+  abrirBtn.addEventListener("click", () => {
+    modal.classList.remove("oculto");
+  });
+
+  // Cerrar modal
+  cerrarBtn.addEventListener("click", () => {
+    modal.classList.add("oculto");
+  });
+
+  // Cerrar si se hace clic fuera del contenido del modal
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.add("oculto");
+    }
+  });
+
+  // Enviar formulario
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("¡Gracias por tu mensaje! Te responderemos pronto.");
+    form.reset();
+    modal.classList.add("oculto");
+  });
+});
+
+
 
 

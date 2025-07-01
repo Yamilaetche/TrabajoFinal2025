@@ -10,6 +10,7 @@ body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  padding-top: 80px;
   background-color: var(--gris-claro);
   text-align: center;
   color: var(--texto);
@@ -18,22 +19,21 @@ body {
   background-repeat: no-repeat; /* evita que se repita */
   background-position: center center; /* centra la imagen */
 }
-/* NAVBAR GENERAL */
+
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #7cb482;
+  background-color: var(--verde-principal);
   padding: 10px 20px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  font-family: 'Inter', sans-serif;
 }
 
-/* Enlaces del menú */
 .nav-links {
   display: flex;
   gap: 20px;
@@ -41,11 +41,12 @@ body {
 }
 
 .nav-links a {
-  color: white;
+  color: rgb(10, 1, 1);
   text-decoration: none;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 25px;
   padding: 10px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .nav-links a:hover {
@@ -53,30 +54,41 @@ body {
   border-radius: 5px;
 }
 
-/* Botones de login/suscripción */
 .nav-buttons {
   display: flex;
   gap: 10px;
 }
 
 .boton {
-  background-color: #ffffff;
+  padding: 10px 20px;
   border: none;
-  padding: 8px 12px;
-  font-weight: 500;
-  border-radius: 6px;
+  border-radius: 25px;
   cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 .iniciar {
-  background-color: #f0f0f0;
+  background-color: #a4d4ae;
+  color: #004d00;
+}
+
+.iniciar:hover {
+  background-color: #90c19c;
 }
 
 .suscribite {
-  background-color: #ffd54f;
+  background-color: #00c851;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Botón hamburguesa */
+.suscribite:hover {
+  background-color: #00994d;
+  transform: scale(1.05);
+}
+
 .hamburger {
   display: none;
   font-size: 26px;
@@ -87,6 +99,9 @@ body {
   margin-left: auto;
 }
 
+<<<<<<< HEAD
+/* ---------------- CONTENIDO PRINCIPAL ---------------- */
+=======
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .navbar {
@@ -243,6 +258,7 @@ body {
   background-color: #056d1a;
 }
 
+>>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
 .container {
   padding-top: 80px;
 }
@@ -268,6 +284,7 @@ body {
   margin-bottom: 32px;
 }
 
+/* ---------------- SECCIÓN MAPA ---------------- */
 .seccion-mapa {
   display: flex;
   justify-content: center;
@@ -313,68 +330,7 @@ body {
   transform: translate(-50%, -50%) scale(1.05);
 }
 
-@media (max-width: 600px) {
-  .titulo {
-    font-size: 36px;
-  }
-
-  .subtitulo {
-    font-size: 18px;
-  }
-
-  .contenedor-imagen {
-    width: 90%;
-    height: auto;
-  }
-
-  .imagen-mapa {
-    width: 100%;
-    height: auto;
-  }
-
-  .btn-ir-mapa {
-    font-size: 1rem;
-    padding: 12px 24px;
-  }
-}
-
-.contenedor-botones {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 10px;
-}
-
-.boton {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 16px;
-}
-
-.iniciar {
-  background-color: #a4d4ae;
-  color: #004d00;
-}
-
-.iniciar:hover {
-  background-color: #90c19c;
-}
-
-.suscribite {
-  background-color: #00c851;
-  color: white;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.suscribite:hover {
-  background-color: #00994d;
-  transform: scale(1.05);
-}
+/* ---------------- MODALES ---------------- */
 .modal {
   display: none;
   position: fixed;
@@ -454,8 +410,21 @@ body {
   cursor: pointer;
   color: #666;
 }
+<<<<<<< HEAD
+
+/* ---------------- BOTÓN CERRAR SESIÓN ---------------- */
+#cerrarSesion {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  background-color: #81c784;
+  border: none;
+  border-radius: 25px;
+=======
 .recetas{
   background-color: #00c851;
+>>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
   color: white;
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -476,4 +445,68 @@ body {
 .cerrarSesion:hover {
   background-color: #66bb6a;
   transform: scale(1.05);
+}
+
+/* ---------------- MENÚ ANTIGUO (OCULTO) ---------------- */
+#menu-btn, .menu {
+  display: none;
+}
+
+/* ---------------- MEDIA QUERIES ---------------- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links,
+  .nav-buttons {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--verde-principal);
+  }
+
+  .nav-links a,
+  .nav-buttons .boton {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  .nav-links.active,
+  .nav-buttons.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    align-self: flex-end;
+    margin-top: -30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .titulo {
+    font-size: 36px;
+  }
+
+  .subtitulo {
+    font-size: 18px;
+  }
+
+  .contenedor-imagen {
+    width: 90%;
+    height: auto;
+  }
+
+  .imagen-mapa {
+    width: 100%;
+    height: auto;
+  }
+
+  .btn-ir-mapa {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
 }

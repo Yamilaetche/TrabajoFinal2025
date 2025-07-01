@@ -1,20 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<<<<<<< HEAD
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recetas | CeliRadar</title>
+  <link rel="stylesheet" href="recetas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+=======
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CeliRadar</title>
   <link rel="stylesheet" href="recetas.css" />
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+>>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
 </head>
 
 <body>
+<<<<<<< HEAD
+
+  <!-- HEADER CON LOGO Y TÍTULO -->
+<header class="encabezado">
+  <h1 class="titulo">CeliRadar</h1>
+  <img src="/Recetas/Fotos para pagina/logo.png" alt="Logo" class="logo" />
+</header>
+=======
+>>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
 
   <header class="encabezado">
     <h1 class="titulo">CeliRadar</h1>
     <img src="Fotos para pagina/logo.png" alt="Logo" class="logo" />
   </header>
 
+<<<<<<< HEAD
+
+  <!-- NAVBAR GENERAL -->
+ <nav class="navbar">
+
+   <!-- Menú hamburguesa -->
+  <button class="hamburger" id="menu-toggle">☰</button> 
+
+  <div class="nav-links" id="nav-links">
+    <a href="../Inicio/inicio.html">Inicio</a>
+    <a href="../Mapa/mapa.html">Mapa</a>
+    <a href="recetas.html">Recetas</a>
+  </div>
+ <!-- Buscador -->
+  <form class="busqueda-form" id="busqueda-form">
+    <input type="text" placeholder="Buscar Recetas sin TACC" id="busqueda-input" />
+    <button type="submit">🔍</button>
+  </form>
+
+ 
+</nav>
+=======
  
   <nav class="navbar">
     <div class="hamburguesa" id="boton-menu">☰</div>
@@ -67,72 +108,139 @@
 <!-- Acá se insertarán las nuevas recetas -->
  <h2> Recetas de Usuarios</h2>
 <div id="recetasUsuario"></div>
+>>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
 
 
+  <!-- Resultados de búsqueda -->
+  <ul id="resultsList"></ul>
+  <div id="resultadosBusqueda"></div>
 
+  <!-- TÍTULO Y CATEGORÍAS -->
   <main>
+    <h2>Recetas Sin TACC</h2>
+    <p>Seleccioná una categoría para ver recetas libres de gluten</p>
+
+    <div class="carrusel-container">
+      <button class="arrow left" id="flecha-izquierda">&#10094;</button>
+      <div class="carrusel" id="carrusel">
+        <img src="Fotos para pagina/PASTAS.jpg" data-categoria="pastas" alt="Pastas" />
+        <img src="Fotos para pagina/dulces y tortas.jpg" data-categoria="tortasYdulces" alt="Tortas y dulces" />
+        <img src="Fotos para pagina/Panes1.jpg" data-categoria="panes" alt="Panes" />
+        <img src="Fotos para pagina/Masas.jpg" data-categoria="masas" alt="Masas" />
+      </div>
+      <button class="arrow right" id="flecha-derecha">&#10095;</button>
+    </div>
+
+    <div id="recetas-container"></div>
+
+    <!-- FORMULARIO PARA AGREGAR RECETA -->
+    <button id="mostrarFormulario">➕ Agregar receta</button>
+    <form id="formularioReceta" style="display: none; margin-top: 1em;">
+      <input type="text" id="titulo" placeholder="Ej: Pan sin gluten" required>
+      <textarea id="ingredientes" placeholder="Ej: Ingredientes: 2 tazas de harina de arroz..." required></textarea>
+      <textarea id="pasos" placeholder="Ej: Pasos: Mezclar los ingredientes..." required></textarea>
+      <button type="submit">Agregar</button>
+    </form>
+
+    <h2>Recetas de Usuarios</h2>
+    <div id="recetasUsuario"></div>
+
+    <!-- CONSEJOS -->
     <section id="recetas">
       <div class="consejos-content">
-    <h2 class="consejos-title">Consejos clave para cocinar sin TACC</h2>
-    
-    <p class="consejos-intro">
-      Cocinar sin TACC requiere cuidados especiales para garantizar preparaciones seguras y deliciosas para personas celíacas o con sensibilidad al gluten. Acá te dejamos los puntos esenciales:
-    </p>
-
-    <div class="consejos-bloques">
-      <div class="bloque">
-        <h3 class="bloque-title">✅ Evitá la contaminación cruzada</h3>
-        <ul class="bloque-lista">
-          <li>Usá utensilios y superficies exclusivas o bien lavadas.</li>
-          <li>No compartas aceite, tostadoras ni coladores.</li>
-          <li>Almacená los ingredientes sin TACC por separado y bien etiquetados.</li>
-        </ul>
-      </div>
-
-      <div class="bloque">
-        <h3 class="bloque-title">✅ Usá ingredientes certificados</h3>
-        <p>
-          Elegí productos que tengan el símbolo <strong>“sin TACC”</strong>. No todos los alimentos naturalmente libres de gluten son seguros si no están certificados.
+        <h2 class="consejos-title">Consejos clave para cocinar sin TACC</h2>
+        <p class="consejos-intro">
+          Cocinar sin TACC requiere cuidados especiales para garantizar preparaciones seguras y deliciosas para personas celíacas o con sensibilidad al gluten.
         </p>
-      </div>
 
-      <div class="bloque">
-        <h3 class="bloque-title">✅ Leé siempre las etiquetas</h3>
-        <p>
-          Incluso en productos conocidos, ya que las fórmulas pueden cambiar. Prestá atención a los aditivos, saborizantes y almidones.
-        </p>
-      </div>
+        <div class="consejos-bloques">
+          <div class="bloque">
+            <h3>✅ Evitá la contaminación cruzada</h3>
+            <ul>
+              <li>Usá utensilios y superficies exclusivas o bien lavadas.</li>
+              <li>No compartas aceite, tostadoras ni coladores.</li>
+              <li>Almacená los ingredientes sin TACC por separado y bien etiquetados.</li>
+            </ul>
+          </div>
 
-      <div class="bloque bloque-harinas">
-        <h3 class="bloque-subtitulo">🌾 Harinas sin TACC recomendadas</h3>
-        <ul class="bloque-lista">
-          <li><strong>Harina de arroz:</strong> liviana y versátil.</li>
-          <li><strong>Harina de maíz:</strong> ideal para masas y polenta.</li>
-          <li><strong>Fécula de maíz:</strong> mejora textura y elasticidad.</li>
-          <li><strong>Harina de mandioca:</strong> buena para panes y chipá.</li>
-          <li><strong>Harina de garbanzo:</strong> sabrosa y nutritiva.</li>
-          <li><strong>Harinas integrales:</strong> de sorgo, quinoa, teff o mijo.</li>
-        </ul>
-        <p class="bloque-nota">💡 Lo ideal es <strong>mezclar varias harinas</strong> para lograr una textura parecida al trigo.</p>
-      </div>
+          <div class="bloque">
+            <h3>✅ Usá ingredientes certificados</h3>
+            <p>Elegí productos con el símbolo <strong>“sin TACC”</strong>.</p>
+          </div>
 
-      <div class="bloque">
-        <h3 class="bloque-subtitulo">👩‍🍳 Trucos útiles para cocinar sin gluten</h3>
-        <ul class="bloque-lista">
-          <li>Usá <strong>goma xántica</strong> o <strong>psyllium</strong> para mejorar la elasticidad.</li>
-          <li>Pesá los ingredientes para mayor precisión.</li>
-          <li>Añadí ingredientes húmedos (huevo, puré, aceite) para evitar sequedad.</li>
-          <li>Dejá reposar la masa antes de hornear.</li>
-          <li>Precalentá bien el horno.</li>
-          <li>Conservá los productos en heladera o freezer.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="bloque">
+            <h3>✅ Leé siempre las etiquetas</h3>
+            <p>Las fórmulas pueden cambiar. Prestá atención a los aditivos y almidones.</p>
+          </div>
 
-    
+          <div class="bloque">
+            <h3>🌾 Harinas sin TACC recomendadas</h3>
+            <ul>
+              <li><strong>Harina de arroz:</strong> liviana y versátil.</li>
+              <li><strong>Harina de maíz:</strong> ideal para masas y polenta.</li>
+              <li><strong>Fécula de maíz:</strong> mejora textura y elasticidad.</li>
+              <li><strong>Harina de mandioca:</strong> buena para panes y chipá.</li>
+              <li><strong>Harina de garbanzo:</strong> sabrosa y nutritiva.</li>
+              <li><strong>Harinas integrales:</strong> sorgo, quinoa, teff, mijo.</li>
+            </ul>
+            <p>💡 Mezclá harinas para una textura más parecida al trigo.</p>
+          </div>
+
+          <div class="bloque">
+            <h3>👩‍🍳 Trucos útiles para cocinar sin gluten</h3>
+            <ul>
+              <li>Usá <strong>goma xántica</strong> o <strong>psyllium</strong> para elasticidad.</li>
+              <li>Pesá los ingredientes.</li>
+              <li>Agregá ingredientes húmedos.</li>
+              <li>Dejá reposar la masa antes de hornear.</li>
+              <li>Precalentá bien el horno.</li>
+              <li>Conservá los productos en heladera o freezer.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-contenido">
+    <div class="footer-contacto">
+      <h3>Contacto</h3>
+      <p>Email: <span id="abrir-modal" class="correo-click">info@celiradar.com</span></p>
+    </div>
+
+    <div class="footer-redes">
+  <h3>Seguinos</h3>
+  <ul>
+    <li><i class="fab fa-instagram"></i> <span class="red-social">CeliRadar_2025</span></li>
+    <li><i class="fab fa-facebook-f"></i> <span class="red-social">CeliRadar2025</span></li>
+    <li><i class="fab fa-whatsapp"></i> <span class="red-social">2284-445566</span></li>
+  </ul>
+</div>
+
+  <p class="footer-copy">&copy; 2025 CeliRadar - Todos los derechos reservados.</p>
+</footer>
+
+
+<footer class="footer">
+  <div class="footer-contenido">
+    <div class="footer-contacto">
+      <button id="abrirModalContacto" class="btn-contacto">Contáctanos</button>
+    </div>
+
+<!-- Modal -->
+<div id="modalContacto" class="modal oculto">
+  <div class="modal-contenido">
+    <span class="cerrar-modal" id="cerrarModalContacto">×</span>
+    <h2>Contacto</h2>
+    <form id="formContacto">
+      <input type="text" placeholder="Tu nombre" required />
+      <input type="email" placeholder="Tu correo" required />
+      <textarea placeholder="Tu mensaje" rows="4" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
 
   <script src="recetas.js" defer></script>
 </body>

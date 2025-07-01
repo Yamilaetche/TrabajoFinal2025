@@ -1,40 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // --- Menú hamburguesa ---
-  const botonMenu = document.getElementById("boton-menu");
-  const menu = document.getElementById("menu");
-
-  botonMenu.addEventListener("click", () => {
-    menu.classList.toggle("activo");
-  });
-
-  //pagina recetas solo suscriptos
-const linkRecetas = document.getElementById("linkRecetas");
-
-linkRecetas.addEventListener("click", (e) => {
-  e.preventDefault(); // evita que redirija
-
-  const usuarioActual = localStorage.getItem("usuarioActual");
-
-  if (usuarioActual) {
-    // Está suscripto → redireccionamos
-    window.location.href="/TrabajoFinal2025/Recetas/recetas.html";
-  } else {
-    // No está suscripto → mostramos mensaje
-    Swal.fire({
-  title: 'Contenido exclusivo',
-  text: 'Suscribite o inicia seccion para acceder a las recetas sin TACC.',
-  icon: 'info',
-  showCancelButton: true,
-  
-  });
-}
-});
-
   // --- Inicializar mapa Leaflet ---
   const map = L.map("Mapa").setView([-36.8955, -60.3218], 15);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "© OpenStreetMap contributors"
   }).addTo(map);
+
+
 
   // --- Barra de búsqueda ---
   document.querySelector(".busqueda-form").addEventListener("submit", e => {
@@ -328,6 +298,40 @@ linkRecetas.addEventListener("click", (e) => {
       }
     });
   }
+  document.addEventListener("DOMContentLoaded", () => {
+
+//Script para toggle de menú 
+   document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+      const navButtons = document.getElementById("nav-buttons");
+
+      toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        navButtons.classList.toggle("active");
+      });
+    });
+
+      //pagina recetas solo suscriptos
+const linkRecetas = document.getElementById("linkRecetas");
+
+linkRecetas.addEventListener("click", (e) => {
+  e.preventDefault(); 
+
+  const usuarioActual = localStorage.getItem("usuarioActual");
+
+  if (usuarioActual) {
+    window.location.href="/TrabajoFinal2025/Recetas/recetas.html";
+  } else {
+    Swal.fire({
+  title: 'Contenido exclusivo',
+  text: 'Suscribite o inicia seccion para acceder a las recetas sin TACC.',
+  icon: 'info',
+  showCancelButton: true,
+  
+  });
+}
+});
 });
 
 
