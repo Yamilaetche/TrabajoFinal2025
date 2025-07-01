@@ -1,4 +1,3 @@
-
 📍 CeliRadar: Tu guía segura ¡LIBRE DE GLUTEN! cerca tuyo
 
 CeliRadar es una aplicación móvil y web diseñada especialmente para personas con celiaquismo. Permite encontrar fácilmente lugares en Olavarría que ofrecen productos sin TACC (Trigo, Avena, Cebada y Centeno) a través de un mapa interactivo y funciones pensadas para mejorar la experiencia libre de gluten. 
