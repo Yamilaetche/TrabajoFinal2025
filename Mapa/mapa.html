@@ -1,7 +1,5 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,29 +10,32 @@
  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   
 </head>
-
 <body>
   <header class="encabezado">
     <h1 class="titulo">CeliRadar</h1>
     <img src="./imagenes/celiradar (1)-modified (1).png" alt="Logo" class="logo" />
   </header>
 
+  <!--Menú hamburguesa-->
   <nav class="navbar">
     <div class="hamburguesa" id="boton-menu">☰</div>
     <ul class="menu" id="menu">
-      <li><a href="/TrabajoFinal2025/Inicio/inicio.html">Inicio</a></li>
-      <li><a href="/TrabajoFinal2025/Mapa/mapa.html">Mapa</a></li>
+      <li><a href="/Inicio/inicio.html">Inicio</a></li>
+      <li><a href="/Mapa/mapa.html">Mapa</a></li>
+
       <li><a href="#" id="linkRecetas">Recetas</a></li>
     </ul>
 
+  <!--Buscador-->
     <form class="busqueda-form">
       <input type="text" placeholder="Buscar lugares sin TACC" id="busqueda-input" />
       <button type="submit">🔍</button>
     </form>
   </nav>
 
+  <!--Filtros-->
   <div class="filtros-container">
-    <button class="filtro-btn" data-tipo="restaurante">🍽️Restaurantes</button>
+    <button class="filtro-btn" data-tipo="restaurante">🍽️ Restaurantes</button>
     <button class="filtro-btn" data-tipo="cafe">☕ Cafés</button>
     <button class="filtro-btn" data-tipo="dietetica">🥦 Dietéticas</button>
     <button class="filtro-btn" data-tipo="mercado">🛒 Mercados</button>
@@ -49,63 +50,57 @@
     <p id="info-tipo"></p>
     <p id="info-direccion"></p>
 
-    <!--lugares favoritos-->
     <button id="agregar-favorito" class="btn-agregar">⭐ Agregar a Favoritos</button>
 
-<div class="seccion-comentarios">
-  <textarea id="comentario-texto" placeholder="Escribe un comentario..."></textarea>
-  <button id="guardar-comentario">💾 Guardar Comentario</button>
-  <ul id="lista-comentarios"></ul>
-</div>
-
-
-  <!-- Carrusel -->
-  <div class="carrusel">
-    <button id="prev" class="arrow left ">←</button>
-    <img id="info-imagen" src="" alt="Imagen del lugar">
-    <button id="next" class="arrow right">→</button>
-  </div>
-</div>
-
-<div id="modal-imagen" class="oculto">
-  <div class="modal-contenido">
-    <img id="modal-img" src="" alt="Imagen grande">
-    <button id="cerrar-modal">❌</button>
-  </div>
-</div>
-<!-- Modal favoritos -->
-<div id="modal-favoritos" class="modal-lista oculto">
-  <div class="modal-contenido">
-    <h2>⭐ Lugares Favoritos</h2>
-    <ul id="lista-favoritos"></ul>
-    <button>Cerrar</button>
-  </div>
-</div>
-
-<!-- Modal comentarios -->
-<div id="modal-comentarios" class="modal-lista oculto">
-  <div class="modal-contenido">
-    <h2>📝 Comentarios Guardados</h2>
-    <ul id="lista-todos-comentarios"></ul>
-    </button>Cerrar</button>
-  </div>
-</div>
-
-
-   
-    <div class="botones-container">
-      <button class="btn-favoritos">⭐ Favoritos</button>
-      <button class="btn-comentarios">✍️ Comentarios</button>
+    <div class="seccion-comentarios">
+      <textarea id="comentario-texto" placeholder="Escribe un comentario..."></textarea>
+      <button id="guardar-comentario">💾 Guardar Comentario</button>
+      <ul id="lista-comentarios"></ul>
     </div>
   
+    <!--Carrusel Imágenes-->
+    <div class="carrusel">
+      <button id="prev" class="arrow left">←</button>
+      <img id="info-imagen" src="" alt="Imagen del lugar" />
+      <button id="next" class="arrow right">→</button>
+    </div>
+  </div>
 
-  <footer class="footer">
+  <!-- Modal Imágenes -->
+  <div id="modal-imagen" class="oculto">
+    <div class="modal-contenido">
+      <img id="modal-img" src="" alt="Imagen grande" />
+      <button id="cerrar-modal">❌</button>
+    </div>
+  </div>
 
-    
-  </footer>
+  <!-- Modal Favoritos -->
+  <div id="modal-favoritos" class="modal-lista oculto">
+    <div class="modal-contenido">
+      <h2>⭐ Lugares Favoritos</h2>
+      <ul id="lista-favoritos"></ul>
+      <button onclick="cerrarModalFavoritos()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Modal Comentarios -->
+  <div id="modal-comentarios" class="modal-lista oculto">
+    <div class="modal-contenido">
+      <h2>📝 Comentarios Guardados</h2>
+      <ul id="lista-todos-comentarios"></ul>
+      <button onclick="cerrarModalComentarios()">Cerrar</button>
+    </div>
+  </div>
+
+  <div class="botones-container">
+    <button class="btn-favoritos">⭐ Favoritos</button>
+    <button class="btn-comentarios">✍️ Comentarios</button>
+  </div>
+
+  <footer class="footer"></footer>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="mapa.js"></script>
 </body>
-
 </html>
+

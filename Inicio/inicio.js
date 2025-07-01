@@ -1,14 +1,15 @@
 
+//Navbar
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  const navButtons = document.getElementById("nav-buttons");
 
-   document.addEventListener("DOMContentLoaded", () => {
-  const boton = document.getElementById("menu-btn");
-  const menu = document.getElementById("menu");
-
-  if (boton && menu) {
-    boton.addEventListener("click", () => {
-    menu.classList.toggle('activo');
-    });
-  }
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    navButtons.classList.toggle("active");
+  });
+  
 
   // Referencias a botones
   const btnLogin = document.getElementById("btnLogin");
