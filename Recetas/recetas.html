@@ -1,37 +1,41 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Recetas Sin TACC</title>
-  <link rel="stylesheet" href="recetas.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CeliRadar</title>
+  <link rel="stylesheet" href="recetas.css" />
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body>
-  <header>
-    <div class="buscador-contenedor"></div>
-    <input type="text" id="searchInput" placeholder="Buscar receta o ingrediente...">
-    <ul id="resultsList"></ul>
 
+  <header class="encabezado">
+    <h1 class="titulo">CeliRadar</h1>
+    <img src="Fotos para pagina/logo.png" alt="Logo" class="logo" />
+  </header>
 
-   <div id="resultadosBusqueda"></div>
-    
- <nav class="navbar">
-  <div class="hamburguesa" id="boton-menu">☰</div>
-  <div class="menu" id="menu">     
-  <li>   <a href="/TrabajoFinal2025/Inicio/inicio.html">Inicio</a></li>
-  <li>   <a href="/TrabajoFinal2025/Mapa/mapa.html">Mapa</a></li>
-  <li>   <a href="#" id="linkRecetas">Recetas</a></li>
+ 
+  <nav class="navbar">
+    <div class="hamburguesa" id="boton-menu">☰</div>
+
+    <ul class="menu" id="menu">     
+      <li><a href="/TrabajoFinal2025/Inicio/inicio.html">Inicio</a></li>
+      <li><a href="/TrabajoFinal2025/Mapa/mapa.html">Mapa</a></li>
+      <li><a href="#" id="linkRecetas">Recetas</a></li>
+    </ul>
+
+    <form class="busqueda-form">
+      <input type="text" id="searchInput" placeholder="Buscar receta o ingrediente..." />
+      <button type="submit">🔍</button>
+    </form>
+  </nav>
+
+  <div class="subtitulo">
+    <h2>Recetas Sin TACC</h2>
+    <h3>Seleccioná una categoría para ver recetas libres de gluten</h3>
   </div>
 
-  </ul>
-   <img src="Fotos para pagina/logo.png" alt="Logo" class="logo" />
- 
-</nav>
-
-<h1>Recetas Sin TACC</h1>
-    <p>Seleccioná una categoría para ver recetas libres de gluten</p>
-  
-</header>
   <nav>
     <div class="carrusel-container">
     <button class="arrow left" id="flecha-izquierda">&#10094;</button>
@@ -57,7 +61,7 @@
   <input type="text" id="titulo" placeholder="Ej: Pan sin gluten" required>
   <textarea id="ingredientes" placeholder="Ej: Ingredientes: 2 tazas de harina de arroz..." required></textarea>
   <textarea id="pasos" placeholder="Ej: Pasos: Mezclar los ingredientes..." required></textarea>
-  <button type="submit">Agregar</button>
+  <button type="submit" class="agregar">Agregar</button>
 </form>
 
 <!-- Acá se insertarán las nuevas recetas -->

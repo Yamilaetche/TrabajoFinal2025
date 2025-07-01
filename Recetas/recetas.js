@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ]
   };
 
-  const botonMenu = document.getElementById("boton-menu");
+const botonMenu = document.getElementById("boton-menu");
 const menu = document.getElementById("menu");
 
 botonMenu.addEventListener("click", (e) => {
@@ -363,7 +363,12 @@ function nuevaRecetaSubmit(e) {
   const titulo = document.getElementById("titulo").value;
   const ingredientes = document.getElementById("ingredientes").value;
   const pasos = document.getElementById("pasos").value;
-  const autor = localStorage.getItem("usuarioActual");
+  const email = localStorage.getItem("usuarioActual");
+  const usuarios = JSON.parse(localStorage.getItem("suscriptos")) || [];
+  const usuario = usuarios.find(u => u.email === email);
+  const autor = usuario ? `${usuario.nombre} ${usuario.apellido}` : email;
+  const emailAutor = email;
+
   const id = crypto.randomUUID(); // ID único para cada receta
 
   const receta = {
@@ -371,6 +376,7 @@ function nuevaRecetaSubmit(e) {
     ingredientes,
     pasos,
     autor,
+    emailAutor,
     id
   };
 
@@ -407,14 +413,41 @@ function mostrarReceta(receta) {
     <p class="autor-receta">Subida por: <em>${receta.autor}</em></p>
   `;
 
-  // Mostrar botón de editar solo si es del usuario actual
-  if (receta.autor === usuarioActual) {
+  // Mostrar botón de editar, eliminar, solo si es del usuario actual
+  if (receta.emailAutor === usuarioActual) {
     const btnEditar = document.createElement("button");
     btnEditar.textContent = "Editar receta";
     btnEditar.classList.add("btn-editar");
     btnEditar.addEventListener("click", () => editarReceta(receta.id));
     nueva.appendChild(btnEditar);
-  }
+
+   const btnEliminar = document.createElement("button");
+  btnEliminar.textContent = "Eliminar receta";
+  btnEliminar.classList.add("btn-eliminar");
+  btnEliminar.addEventListener("click", () => {
+ Swal.fire({
+    title: '¿Eliminar receta?',
+   
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, Eliminar',
+    cancelButtonText: 'Cancelar',
+    confirmButtonColor: '#66bb6a',
+    cancelButtonColor: '#d33'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      nueva.style.display = "none";
+      Swal.fire({
+        title: 'Eliminada',
+        text: 'La receta se elimino correctamente.',
+        icon: 'success',
+        confirmButtonColor: '#66bb6a'
+      });
+    }
+  });
+});
+  nueva.appendChild(btnEliminar);
+}
 
   contenedor.appendChild(nueva);
 }
