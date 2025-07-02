@@ -1,4 +1,4 @@
-/* PALETA COLORES */
+/* ========== PALETA DE COLORES ========== */
 :root {
   --verde-suave: #a9f3a1;
   --verde-principal: #7cb482;
@@ -7,14 +7,21 @@
   --texto: #1f3523;
 }
 
+/* ========== ESTILOS GENERALES ========== */
 body {
-<<<<<<< HEAD
   font-family: Arial, Helvetica, sans-serif;
   background-color: #e1eae5;
   margin: 0;
   padding: 0;
+  color: var(--texto);
+  background-image: url('/IMAGENES/fondo1.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center center; 
+  overflow-x: hidden;
 }
 
+/* ========== ENCABEZADO ========== */
 .encabezado {
   display: flex;
   align-items: center;
@@ -22,7 +29,6 @@ body {
   background-color: var(--gris-claro);
   padding: 10px 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
   z-index: 1000;
   flex-wrap: nowrap;
 }
@@ -41,9 +47,8 @@ body {
   margin-left: 20px;
 }
 
-/* NAVBAR */
+/* ========== NAVBAR ========== */
 .navbar {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,46 +69,24 @@ body {
   font-weight: 500;
   font-size: 25px;
   padding: 10px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
 }
 
 .nav-links a:hover {
   background-color: #6aa470;
 }
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  .nav-links,
-  .busqueda-form {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--verde-principal);
-    margin-top: 10px;
-  }
-
-  .nav-links.active,
-  .busqueda-form.active {
-    display: flex;
-  }
-
-  .nav-links a,
-  .busqueda-form input,
-  .busqueda-form button {
-    width: 100%;
-    text-align: center;
-  }
-
-  .hamburger {
-    display: block;
-    align-self: flex-end;
-  }
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1f2937;
+  align-self: flex-end;
 }
-/* FORMULARIO DE BÚSQUEDA */
+
+/* ========== FORMULARIO DE BÚSQUEDA ========== */
 .busqueda-form {
   display: flex;
   align-items: center;
@@ -111,14 +94,14 @@ body {
 }
 
 .busqueda-form input {
-  padding: 6px 10px;
+   padding: 6px 10px;
   border: none;
   border-radius: 8px;
   font-size: 14px;
 }
 
 .busqueda-form button {
-  background-color: var(--verde-oscuro);
+ background-color: var(--verde-oscuro);
   border: none;
   padding: 6px 10px;
   font-size: 16px;
@@ -126,122 +109,13 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s;
-=======
-   margin: 0;
-  padding-bottom: 120px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--texto);
-  background-image: url('Fotos para pagina/fondo1.jpg');
-  background-size: cover; /* ajusta la imagen al tamaño del body */
-  background-repeat: no-repeat; /* evita que se repita */
-  background-position: center center; /* centra la imagen */
-  overflow-x: hidden;
-}
-
-
-/* Encabezado con título a la izquierda y logo a la derecha */
-.encabezado {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-}
-
-.titulo {
-  font-size: 32px;
-  margin: 0;
-}
-
-.logo {
-   height: 120px;
-  width: auto;
-  margin-left: 30%;
-}
-
-/* Navbar con hamburguesa a la izquierda y buscador a la derecha */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 20px;
- 
-}
-
-.hamburguesa {
-  font-size: 24px;
-  cursor: pointer;
-  color: black;
-}
-
-/* Menú hamburguesa */
-.menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 10px;
-  background-color: var(--verde-claro);
-  border-radius: 8px;
-  padding: 10px 0;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
-
-.menu.activo {
-  display: flex;
-  flex-direction: column;
-}
-
-.menu li {
-  list-style: none;
-}
-
-.menu li a {
-  display: block;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #398e54;
-  font-weight: 600;
->>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
 }
 
 .busqueda-form button:hover {
   background-color: #056d1a;
 }
 
-/* Buscador*/
-.busqueda-form {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  gap: 0;
-}
-
-.busqueda-form input {
-  padding: 4px 10px;
-  border: none;
-  border-radius: 4px 0 0 4px;
-  font-size: 14px;
-  outline: none;
-  width: 10%;
-  margin: 0;
-}
-
-
-.busqueda-form button {
-  padding: 6px 12px;
-  border: none;
-  background-color: var(--verde-oscuro);
-  color: white;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-  font-size: 18px;
-  transition: background-color 0.3s;
-  margin: 0;
-}
-.busqueda-form button:hover {
-  background-color: #056d1a;
-}
-
-/* Subtítulos centrados */
+/* ========== SUBTÍTULOS ========== */
 .subtitulo {
   text-align: center;
   margin: 20px auto;
@@ -258,19 +132,7 @@ body {
   color: #0c501e;
 }
 
-
-.hamburger {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #1f2937;
-}
-
-
-
-/* CARRUSEL */
+/* ========== CARRUSEL ========== */
 .carrusel-container {
   position: relative;
   width: 100%;
@@ -322,7 +184,7 @@ body {
   right: 10px;
 }
 
-/* SECCIÓN CONSEJOS */
+/* ========== SECCIÓN CONSEJOS ========== */
 main {
   padding: 20px;
 }
@@ -370,7 +232,7 @@ main {
   margin-top: 0.5rem;
 }
 
-/* RECETAS */
+/* ========== RECETAS ========== */
 .grid-recetas {
   display: grid;
   gap: 20px;
@@ -387,13 +249,17 @@ main {
 }
 
 .receta h3 {
+  margin-top: 10px;
   color: #374151;
-  margin-top: 0;
 }
 
 .receta p,
 .receta ul {
   font-size: 14px;
+}
+
+.receta ul {
+  padding-left: 20px;
 }
 
 .imagen-receta {
@@ -404,48 +270,12 @@ main {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
-<<<<<<< HEAD
-/* FORMULARIO RECETA */
-=======
-
-.receta h3 {
-  margin-top: 10px;
-  color: #374151;
+.autor-receta {
+  font-size: 0.9em;
+  color: #555;
 }
 
-.receta ul {
-  padding-left: 20px;
-}
-
-.receta p {
-  font-size: 14px;
-}
- 
-#buscador {
-  width: 50%;
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 1em;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-
-#searchInput {
-  width: 50%;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-
- h2 {
-  margin-top: 10px;
-  color: #374151;
-  margin: 30px 0 0 20px;
-}
-
-
->>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
+/* ========== FORMULARIO RECETA ========== */
 #formularioReceta {
   display: flex;
   flex-direction: column;
@@ -458,16 +288,12 @@ main {
 #formularioReceta textarea {
   padding: 10px;
   border-radius: 8px;
-<<<<<<< HEAD
   border: 1px solid #ccc;
   font-family: inherit;
-=======
-  border: 1px solid #7e817e;
->>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
 }
 
 #formularioReceta button {
-  background-color:#979997 ;
+  background-color: #979997;
   border: none;
   padding: 10px;
   border-radius: 8px;
@@ -492,23 +318,10 @@ main {
   background-color: #7bcf8a;
 }
 
-<<<<<<< HEAD
-.btn-editar {
-=======
-.receta {
-  border: 1px solid #ccc;
-  padding:  10px 15px;
-  margin: 30px 0 0 20px;
-  border-radius: 10px;
-  background-color: #f9fff9;
-}
-.autor-receta {
-  font-size: 0.9em;
-  color: #555;
-}
-
-.btn-editar  {
->>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
+/* ========== BOTONES ========== */
+.btn-editar,
+.agregar,
+.btn-eliminar {
   margin-top: 10px;
   padding: 6px 12px;
   background-color: #4caf50;
@@ -518,12 +331,13 @@ main {
   cursor: pointer;
 }
 
-.btn-editar:hover {
+.btn-editar:hover,
+.agregar:hover,
+.btn-eliminar:hover {
   background-color: #388e3c;
 }
 
-<<<<<<< HEAD
-/* FOOTER */
+/* ========== FOOTER ========== */
 .footer {
   background-color: var(--verde-principal);
   padding: 20px;
@@ -538,7 +352,8 @@ main {
   align-items: center;
 }
 
-.footer-contacto, .footer-redes {
+.footer-contacto,
+.footer-redes {
   margin-bottom: 10px;
 }
 
@@ -567,7 +382,7 @@ main {
   margin: 5px 0;
 }
 
-/* MODAL */
+/* ========== MODAL ========== */
 .modal {
   display: flex;
   justify-content: center;
@@ -614,7 +429,7 @@ form textarea {
 }
 
 form button[type="submit"] {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 10px;
   width: 100%;
@@ -624,6 +439,34 @@ form button[type="submit"] {
   font-size: 16px;
 }
 
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links,
+  .busqueda-form {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--verde-principal);
+    margin-top: 10px;
+  }
+
+  .nav-links.active,
+  .busqueda-form.active {
+    display: flex;
+  }
+
+  .nav-links a,
+  .busqueda-form input,
+  .busqueda-form button {
+    width: 100%;
+    text-align: center;
+  }
+}
 
 @media (max-width: 600px) {
   .footer-contenido {
@@ -632,31 +475,3 @@ form button[type="submit"] {
   }
 }
 
-
-=======
-.agregar{
-   margin-top: 10px;
-  padding: 6px 12px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.agregar:hover {
-  background-color: #388e3c;
-}
-.btn-eliminar {
-  margin-top: 10px;
-  padding: 6px 12px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.btn-eliminar:hover {
-  background-color: #388e3c;
-}
->>>>>>> bbb1792ccec96a48409cb3438453f1321d255e84
