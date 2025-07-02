@@ -35,12 +35,12 @@
       nombre: "Jengibre casa de comida",
       direccion: "25 de Mayo 1818",
       imagenes: [
-        "imagenes/jengibre cocina.jpg",
-        "imagenes/jen1.jpeg",
-        "imagenes/jen2.jpeg",
-        "imagenes/jen3.jpeg",
-        "imagenes/jen4.jpeg",
-        "imagenes/jen5.jpeg"
+        "/IMAGENES/jengibre cocina.jpg",
+        "/IMAGENES/jen1.jpeg",
+        "/IMAGENES/jen2.jpeg",
+        "/IMAGENES/jen3.jpeg",
+        "/IMAGENES/jen4.jpeg",
+        "/IMAGENES/jen5.jpeg"
       ]
     },
     {
@@ -49,10 +49,10 @@
       nombre: "Macola",
       direccion: "Rivadavia 2730",
       imagenes: ["imagenes/Macola- imagen 1.jpg",
-        "imagenes/Macola-imagen 2.jpg",
-        "imagenes/Macola-imagen 3.jpg",
-        "imagenes/Macola-imagen 4.jpg",
-        "imagenes/Macola-imagen5.jpg"
+        "/IMAGENES/Macola-imagen 2.jpg",
+        "/IMAGENES/Macola-imagen 3.jpg",
+        "/IMAGENES/Macola-imagen 4.jpg",
+        "/IMAGENES/Macola-imagen5.jpg"
       ]
     },
     {
@@ -61,12 +61,12 @@
       nombre: "Café Vega",
       direccion: "Vicente López 2599",
       imagenes: [
-        "imagenes/cafe vega.jpg",
-        "imagenes/vega1.jpeg",
-        "imagenes/vega2.jpeg",
-        "imagenes/vega3.jpeg",
-        "imagenes/vega4.jpeg",
-        "imagenes/vega5.jpeg"
+        "/IMAGENES/cafe vega.jpg",
+        "/IMAGENES/vega1.jpeg",
+        "/IMAGENES/vega2.jpeg",
+        "/IMAGENES/vega3.jpeg",
+        "/IMAGENES/vega4.jpeg",
+        "/IMAGENES/vega5.jpeg"
       ]
     },
     {
@@ -75,10 +75,10 @@
       nombre: "Cafetto",
       direccion: "San Martin & Moreno",
       imagenes: ["imagenes/Cafetto- imag1.jpg",
-        "imagenes/cafetto-imag2.jpg",
-        "imagenes/cafetto-imag3.jpg",
-        "imagenes/cafetto-imag4.jpg",
-        "imagenes/cafetto-imag5.jpg"
+        "/IMAGENES/cafetto-imag2.jpg",
+        "/IMAGENES/cafetto-imag3.jpg",
+        "/IMAGENES/cafetto-imag4.jpg",
+        "/IMAGENES/cafetto-imag5.jpg"
         
       ]
     },
@@ -88,12 +88,12 @@
       nombre: "Santa Lucía",
       direccion: "Horno 2634",
       imagenes: [
-        "imagenes/santa lucia.jpg",
-        "imagenes/sl1.jpeg",
-        "imagenes/sl2.jpeg",
-        "imagenes/sl3.jpeg",
-        "imagenes/sl4.jpeg",
-        "imagenes/sl5.jpeg"
+        "/IMAGENES/santa lucia.jpg",
+        "/IMAGENES/sl1.jpeg",
+        "/IMAGENES/sl2.jpeg",
+        "/IMAGENES/sl3.jpeg",
+        "/IMAGENES/sl4.jpeg",
+        "/IMAGENES/sl5.jpeg"
       ]
     },
     {
@@ -102,10 +102,10 @@
       nombre: "Dietética Olavarría",
       direccion: "Necoche 2875",
       imagenes: ["imagenes/dietOla-img1.webp",
-        "imagenes/dietOlav-imag2.webp",
-        "imagenes/dietOlav-imag3.webp",
-        "imagenes/dietOlav-imag4.webp",
-        "imagenes/dietOlav-imag5.webp" 
+        "/IMAGENES/dietOlav-imag2.webp",
+        "/IMAGENES/dietOlav-imag3.webp",
+        "/IMAGENES/dietOlav-imag4.webp",
+        "/IMAGENES/dietOlav-imag5.webp" 
       ]
     },
     {
@@ -114,12 +114,12 @@
       nombre: "Almacén Saludable",
       direccion: "Av. Colón 1909",
       imagenes: [
-        "imagenes/almacen saludable.jpg",
-        "imagenes/as1.jpeg",
-        "imagenes/as2.jpeg",
-        "imagenes/as3.jpeg",
-        "imagenes/as4.jpeg",
-        "imagenes/as5.jpeg"
+        "/IMAGENES/almacen saludable.jpg",
+        "/IMAGENES/as1.jpeg",
+        "/IMAGENES/as2.jpeg",
+        "/IMAGENES/as3.jpeg",
+        "/IMAGENES/as4.jpeg",
+        "/IMAGENES/as5.jpeg"
       ]
     },
      {
@@ -127,9 +127,10 @@
       coords: [-36.894084, -60.322575],
       nombre: "Supermercado Día",
       direccion: "Rivadavia 2746",
-      imagenes: ["imagenes/dia-imag1.jpeg",
-        "imagenes/dia-imag2.webp",
-        "imagenes/dia-imag3.webp"
+      imagenes: [
+        "/IMAGENES/dia-imag1.jpeg",
+        "/IMAGENES/dia-imag2.webp",
+        "/IMAGENES/dia-imag3.webp"
 
       ]
     }
@@ -321,7 +322,7 @@ linkRecetas.addEventListener("click", (e) => {
   const usuarioActual = localStorage.getItem("usuarioActual");
 
   if (usuarioActual) {
-    window.location.href="/TrabajoFinal2025/Recetas/recetas.html";
+    window.location.href="/HTML/recetas.html";
   } else {
     Swal.fire({
   title: 'Contenido exclusivo',

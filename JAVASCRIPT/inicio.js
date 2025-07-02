@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Referencias a botones
   const btnLogin = document.getElementById("btnLogin");
-  const btnSuscribite = document.getElementById("btnSuscribite");
+  const btnSuscribite = document.getElementById("abrirModalSuscripcion");
   const btnCerrarSesion = document.getElementById("btnCerrarSesion");
   const btnIrARecetas = document.getElementById("btnIrARecetas");
   const linkRecetas = document.getElementById("linkRecetas");
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (btnIrARecetas) {
       btnIrARecetas.addEventListener("click", () => {
-        window.location.href = "/TrabajoFinal2025/Recetas/recetas.html";
+        window.location.href = "/HTML/recetas.html";
       });
     }
   }
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (usuarioActual) {
     // Está suscripto → redireccionamos
-    window.location.href="/TrabajoFinal2025/Recetas/recetas.html";
+    window.location.href="/HTML/recetas.html";
   } else {
     // No está suscripto → mostramos mensaje
     Swal.fire({
@@ -113,7 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // LOGIN
-  const loginForm = document.querySelector("#modalLogin form");
+  const loginForm = document.getElementById("formLogin");
+
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = loginForm.querySelector("input[type='email']").value.trim().toLowerCase();
@@ -185,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (password.length < 4) {
+    if (password.length < 6) {
       Swal.fire({
         title: 'Contraseña muy corta',
         text: 'Debe tener al menos 4 caracteres.',

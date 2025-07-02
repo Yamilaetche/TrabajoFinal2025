@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     panes: [
       {
         nombre: "Pan de arroz",
-        imagen: "Fotos para pagina/panArroz.jpg",
+        imagen: "/IMAGENES/panArroz.jpg",
         ingredientes: [
           "400 g Arroz largo fino (NO reemplazar por harina de arroz)",
           "250 ml Agua tibia",
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         nombre: "Pan casero sin gluten",
-        imagen: "Fotos para pagina/pan.jpg",
+        imagen: "/IMAGENES/pan.jpg",
         ingredientes: [
           "500 gr de harina premezcla sin gluten",
           "10 gr de levadura en polvo",
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         nombre: "Chipa sin gluten",
-        imagen: "Fotos para pagina/chipa.jpg",
+        imagen: "/IMAGENES/chipa.jpg",
         ingredientes: [
           "1/2 kg almidón de mandioca",
           "3 huevos",
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         nombre: "Focaccia sin TACC",
-        imagen: "Fotos para pagina/focaccia.jpg",
+        imagen: "/IMAGENES/focaccia.jpg",
         ingredientes: [
           "500 gr premezcla sin gluten",
           "500 ml agua tibia",
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pastas: [
       {
         nombre: "Tallarines sin gluten",
-        imagen: "Fotos para pagina/pasta.jpg",
+        imagen: "/IMAGENES/pasta.jpg",
         ingredientes: [
           "150 gr premezcla sin gluten",
           "150 gr leche en polvo",
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         nombre: "Ñoquis caseros de papa y Maizena",
-        imagen: "Fotos para pagina/ñoquis.jpg",
+        imagen: "/IMAGENES/ñoquis.jpg",
         ingredientes: [
           "400 gr papas pisadas (como para puré)",
           "1 huevo",
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         nombre: "Lasaña sin gluten (láminas caseras)",
-        imagen: "Fotos para pagina/lasaña.jpg",
+        imagen: "/IMAGENES/lasaña.jpg",
         ingredientes: [
           "300 gr harina sin gluten (de maíz u otra para pasta)",
           "1 cucharadita de psyllium en polvo",
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tortasYdulces: [
       {
         nombre: "Torta de chocolate sin TACC",
-        imagen: "Fotos para pagina/tortaChoco.jpg",
+        imagen: "/IMAGENES/tortaChoco.jpg",
         ingredientes: [
           "3 huevos",
           "1 1/5 taza de azúcar",
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         nombre: "Budín de banana sin TACC",
-        imagen: "Fotos para pagina/budin.jpg",
+        imagen: "/IMAGENES/budin.jpg",
         ingredientes: [
           "2 huevos (100 g)",
           "100 g de aceite de girasol",
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         nombre: "Cookies sin TACC",
-        imagen: "Fotos para pagina/masitas.jpg",
+        imagen: "/IMAGENES/masitas.jpg",
         ingredientes: [
           "200 g de premezcla sin gluten o mix de harinas",
           "1 cucharadita de polvo de hornear",
@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
     masas: [
       {
         nombre: "Masa para Empanadas",
-        imagen: "Fotos para pagina/empanada.jpg",
+        imagen: "/IMAGENES/empanada.jpg",
         ingredientes: [
           "250 g Premezcla",
           "C/N Agua hervida",
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
        },
        {
        nombre: "Masa de Pizza",
-       imagen: "Fotos para pagina/pizza.jpg",
+       imagen: "/IMAGENES/pizza.jpg",
        ingredientes: [
       "300 gr premezcla",
       "25 gr levadura",
