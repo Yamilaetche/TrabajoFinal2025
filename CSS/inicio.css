@@ -31,7 +31,10 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box; /* 🔑 Muy importante */
   z-index: 1000;
+  overflow-x: hidden; /* Previene el desborde */
 }
 
 .nav-links {
@@ -98,7 +101,23 @@ body {
   cursor: pointer;
   margin-left: auto;
 }
+.recetas{
+  background-color:  #f2f2f2;
+  color: #004d00; 
+}
 
+.recetas:hover {
+  background-color: #66bb6a;
+  transform: scale(1.05);
+}
+.cerrarSesion{
+   background-color:  #f2f2f2;
+  color: #004d00;
+}
+.cerrarSesion:hover{
+  background-color: #66bb6a;
+  transform: scale(1.05);
+}
 /* ---------------- ENCABEZADO ---------------- */
 .encabezado {
   display: flex;
@@ -253,26 +272,6 @@ body {
   font-size: 22px;
   cursor: pointer;
   color: #666;
-}
-
-/* ---------------- BOTONES ESPECIALES ---------------- */
-#cerrarSesion,
-.cerrarSesion,
-.recetas {
-  padding: 12px 24px;
-  background-color: #00c851;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-#cerrarSesion:hover,
-.cerrarSesion:hover,
-.recetas:hover {
-  background-color: #66bb6a;
-  transform: scale(1.05);
 }
 
 /* ---------------- FORMULARIO DE BÚSQUEDA ---------------- */
