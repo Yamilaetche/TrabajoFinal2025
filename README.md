@@ -73,11 +73,13 @@ Este proyecto está bajo la licencia MIT. Ver archivo LICENSE para más informac
 
 Desarrolladoras:
 
-Natalia Mansilla
-
 Yamila Etchegaray
 
 Silvana Sarmiento
+
+Natalia Mansilla
+
+
 
 
 Ciudad: Olavarría, Argentina
