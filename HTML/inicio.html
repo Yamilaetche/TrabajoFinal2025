@@ -1,79 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CeliRadar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
-  <link rel="stylesheet" href="/CSS/inicio.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CeliRadar - Inicio</title>
+<link rel="stylesheet" href="../CSS/inicio.css">
+<!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="../JAVASCRIPT/inicio.js" defer></script>
 </head>
 <body>
 
 <nav class="navbar">
-
-<button class="hamburger" id="menu-toggle">☰</button>
-
-  <div class="nav-links" id="nav-links">
-    <a href="/HTML/inicio.html">Inicio</a>
-    <a href="/HTML/mapa.html">Mapa</a>
-    <a href="#" id="linkRecetas">Recetas</a>
+  <div class="nav-links">
+    <a href="inicio.html">Inicio</a>
+    <a href="mapa.html">Mapa</a>
+    <a href="recetas.html" id="link-recetas">Recetas</a>
   </div>
-
-  <!-- Botones de usuario -->
-  <div class="nav-buttons" id="nav-buttons">     
-   <div class="contenedor-botones">
- 
-    <button id="btnLogin" class="boton iniciar">Iniciar sesión</button>
-    <button id="abrirModalSuscripcion" class="boton suscribite">Para ver contenido exclusivo Suscribite!!</button>
-    <button id="btnIrARecetas" style="display: none" class="boton recetas">Ir a Recetas</button>
-    <button id="btnCerrarSesion" class="boton cerrarSesion" style="display: none;">Cerrar sesión</button>
- </div>
+  <div class="botones-login">
+    <button id="btn-login">Iniciar sesión</button>
+    <button id="btn-suscribirse">Suscribite!</button>
   </div>
 </nav>
-   <!-- Modal Login -->
-<div id="modalLogin" class="modal">
-  <div class="modal-contenido moderno">
-    <div class="modal-izquierda">
-      <img src="/IMAGENES/icono-email.png" alt="Login">
-    </div>
-    <div class="modal-derecha">
-      <span class="cerrar" id="cerrarLogin">×</span>
-      <h2>Iniciar sesión</h2>
-      <form id="formLogin">
-        <input type="email" placeholder="Correo electrónico" required>
-        <input type="password" placeholder="Contraseña" required>
-        <button type="submit">Entrar</button>
-      </form>
-    </div>
+
+<section class="bienvenida">
+  <img src="../IMAGENES/logo.png" alt="CeliRadar Logo" class="logo-central">
+  <h1>Bienvenido a CeliRadar</h1>
+  <p>Tu guía segura ¡SIN TACC! cerca tuyo</p>
+</section>
+
+<!-- MODAL LOGIN -->
+<div id="modalLogin" class="modal oculto">
+  <div class="modal-contenido">
+    <span id="cerrarLogin" class="cerrar">&times;</span>
+    <h2>Iniciar sesión</h2>
+    <form id="formLogin">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+    </form>
   </div>
 </div>
 
- <!-- Modal Registro -->
- <div id="modal" class="modal">
-  <div class="modal-contenido moderno">
-    <div class="modal-izquierda">
-      <img src="/IMAGENES/icono-email.png" alt="Mail">
-    </div>
-    <div class="modal-derecha">
-      <span class="cerrar" id="cerrarModal">×</span>
-      <h2>Suscribite para acceder</h2>
-       <input type="text" id="nombre" placeholder="Nombre" required>
-        <input type="text" id="apellido" placeholder="Apellido" required>
-      <input type="email" id="email" placeholder="ejemplo@mail.com">
-      <input type="password" id="password" placeholder="Contraseña (mínimo 6 caracteres)">
-      <button id="registrarse">Enviar</button>
-    </div>
+<!-- MODAL SUSCRIPCIÓN -->
+<div id="modalSuscribir" class="modal oculto">
+  <div class="modal-contenido">
+    <span id="cerrarSuscribir" class="cerrar">&times;</span>
+    <h2>Suscribite</h2>
+    <form id="formSuscribir">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Contraseña" required>
+      <button type="submit">Registrarme</button>
+    </form>
   </div>
 </div>
-
-  <!-- Contenido principal -->
-  <div class="container">
-    <div class="titulo">CeliRadar</div>
-    <div class="subtitulo">Tu guía segura ¡LIBRE DE GLUTEN! cerca tuyo</div>
-    <img src="/IMAGENES/Logo.png" alt="Logo de CeliRadar" class="logo" />
-  </div>
 
   <!-- Vista previa del mapa -->
   <div class="seccion-mapa">
@@ -83,8 +67,15 @@
     </div>
   </div>
 
-  <script src="/JAVASCRIPT/inicio.js"></script>
+
+<footer>
+  &copy; 2025 CeliRadar
+</footer>
+
 </body>
 </html>
+
+
+
 
 

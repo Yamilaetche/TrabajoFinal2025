@@ -1,226 +1,82 @@
+// Estado del usuario
+let usuarioLogueado = localStorage.getItem('usuarioLogueado') === 'true';
 
-//Navbar
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-  const navButtons = document.getElementById("nav-buttons");
+document.addEventListener('DOMContentLoaded', () => {
+  const btnLogin = document.getElementById('btn-login');
+  const btnSuscribirse = document.getElementById('btn-suscribirse');
+  const modalLogin = document.getElementById('modalLogin');
+  const modalSuscribir = document.getElementById('modalSuscribir');
+  const cerrarLogin = document.getElementById('cerrarLogin');
+  const cerrarSuscribir = document.getElementById('cerrarSuscribir');
+  const formLogin = document.getElementById('formLogin');
+  const formSuscribir = document.getElementById('formSuscribir');
+  const linkRecetas = document.getElementById('link-recetas');
 
-  toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    navButtons.classList.toggle("active");
-  });
-  
-
-  // Referencias a botones
-  const btnLogin = document.getElementById("btnLogin");
-  const btnSuscribite = document.getElementById("abrirModalSuscripcion");
-  const btnCerrarSesion = document.getElementById("btnCerrarSesion");
-  const btnIrARecetas = document.getElementById("btnIrARecetas");
-  const linkRecetas = document.getElementById("linkRecetas");
-  const btnRegistrarse = document.getElementById("registrarse");
-  const modalLogin = document.getElementById("modalLogin");
-  const modalSuscripcion = document.getElementById("modal");
-  const cerrarLogin = document.getElementById("cerrarLogin");
-  const cerrarModalSuscripcion = document.getElementById("cerrarModal");
-
-  // Recuperar usuarios y usuario actual
-  let usuarios = JSON.parse(localStorage.getItem("suscriptos")) || [];
-  let usuarioActual = localStorage.getItem("usuarioActual");
-
-  // Mostrar modales
-  btnLogin.addEventListener("click", () => {
-    modalLogin.style.display = "flex";
-  });
-
-  btnSuscribite.addEventListener("click", () => {
-    modalSuscripcion.style.display = "flex";
-  });
-
-  // Cerrar modales
-  cerrarLogin.addEventListener("click", () => {
-    modalLogin.style.display = "none";
-  });
-
-  cerrarModalSuscripcion.addEventListener("click", () => {
-    modalSuscripcion.style.display = "none";
-  });
-
- // Mostrar u ocultar botones según sesión
-  if (usuarioActual) {
-    if (btnLogin) btnLogin.style.display = "none";
-    if (btnSuscribite) btnSuscribite.style.display = "none";
-    if (btnCerrarSesion) btnCerrarSesion.style.display = "inline-block";
-    if (btnIrARecetas) btnIrARecetas.style.display = "inline-block";
-
-    if (btnCerrarSesion) {
-      btnCerrarSesion.addEventListener("click", () => {
-        Swal.fire({
-          title: '¿Cerrar sesión?',
-          icon: 'question',
-          showCancelButton: true,
-          confirmButtonText: 'Sí, cerrar',
-          cancelButtonText: 'Cancelar',
-          confirmButtonColor: '#66bb6a'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            localStorage.removeItem("usuarioActual");
-            Swal.fire({
-              title: 'Sesión cerrada',
-              icon: 'success',
-              confirmButtonColor: '#66bb6a'
-            }).then(() => location.reload());
-          }
-        });
-      });
-    }
-
-    if (btnIrARecetas) {
-      btnIrARecetas.addEventListener("click", () => {
-        window.location.href = "/HTML/recetas.html";
-      });
-    }
-  }
- 
-  // Evento para link "Recetas" del menú
-  linkRecetas.addEventListener("click", (e) => {
-  e.preventDefault(); // evita que redirija
-
-  if (usuarioActual) {
-    // Está suscripto → redireccionamos
-    window.location.href="/HTML/recetas.html";
+  // Inicializar acceso a recetas
+  if(usuarioLogueado){
+    btnLogin.textContent = 'Cerrar sesión';
+    linkRecetas.classList.remove('disabled');
   } else {
-    // No está suscripto → mostramos mensaje
-    Swal.fire({
-  title: 'Contenido exclusivo',
-  text: 'Suscribite o inicia seccion para acceder a las recetas sin TACC.',
-  icon: 'info',
-  showCancelButton: true,
-  confirmButtonText: 'Suscribirme',
-  cancelButtonText: 'Cancelar',
-  confirmButtonColor: '#66bb6a'
-}).then((result) => {
-  if (result.isConfirmed) {
-     modalSuscripcion.style.display = "flex";
-  }
-});
-}
-});
-
-  // Validar email
-  function emailValido(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
+    linkRecetas.classList.add('disabled');
+    linkRecetas.addEventListener('click', e => e.preventDefault());
   }
 
-  // LOGIN
-  const loginForm = document.getElementById("formLogin");
-
-  loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = loginForm.querySelector("input[type='email']").value.trim().toLowerCase();
-    const password = loginForm.querySelector("input[type='password']").value;
-
-    let usuarios = JSON.parse(localStorage.getItem("suscriptos")) || [];
-    const usuario = usuarios.find(u => u.email === email && u.password === password);
-
-
-    if (!emailValido(email)) {
+  // --- Botón Login / Cerrar sesión ---
+  btnLogin.addEventListener('click', () => {
+    if(usuarioLogueado){
+      usuarioLogueado = false;
+      localStorage.setItem('usuarioLogueado','false');
       Swal.fire({
-        title: 'Email inválido',
-        text: 'Ingresá un email válido.',
-        icon: 'error',
-        confirmButtonText: 'Ok',
-        confirmButtonColor: '#66bb6a'
-      });
-      return;
-    }
-
-    if (usuario) {
-      localStorage.setItem("usuarioActual", email);
-      Swal.fire({
-        title: 'Inicio exitoso',
-        text: 'Bienvenido nuevamente.',
-        icon: 'success',
-        confirmButtonText: 'Gracias',
-        confirmButtonColor: '#66bb6a'
-      }).then(() => {
-        modalLogin.style.display = "none";
-        location.reload();
-      });
-    } else {
-      Swal.fire({
-        title: 'Datos incorrectos',
-        text: 'Email o contraseña incorrectos.',
-        icon: 'warning',
-        confirmButtonText: 'Reintentar',
-        confirmButtonColor: '#66bb6a'
-      });
-    }
-  });
-
-  // REGISTRO
-  if (btnRegistrarse) {
-  btnRegistrarse.addEventListener("click", () => {
-  const nombre = document.getElementById("nombre").value.trim();
-  const apellido = document.getElementById("apellido").value.trim();
-    const email = document.getElementById("email").value.trim().toLowerCase();
-    const password = document.getElementById("password").value.trim();
-
-     if (!nombre || !apellido) {
-    Swal.fire({
-      title: 'Faltan datos',
-      text: 'Completá tu nombre y apellido.',
-      icon: 'warning',
-      confirmButtonColor: '#66bb6a'
-    });
-    return;
-  }
-
-    if (!emailValido(email)) {
-      Swal.fire({
-        title: 'Email inválido',
-        text: 'Ingresá un email válido.',
-        icon: 'error',
-        confirmButtonColor: '#66bb6a'
-      });
-      return;
-    }
-
-    if (password.length < 6) {
-      Swal.fire({
-        title: 'Contraseña muy corta',
-        text: 'Debe tener al menos 4 caracteres.',
-        icon: 'warning',
-        confirmButtonColor: '#66bb6a'
-      });
-      return;
-    }
-
-    const yaExiste = usuarios.find(u => u.email === email);
-    if (yaExiste) {
-      Swal.fire({
-        title: 'Ya registrado',
-        text: 'Este email ya está suscripto.',
+        title: 'Sesión cerrada',
         icon: 'info',
-        confirmButtonColor: '#66bb6a'
-      });
+        confirmButtonText: 'OK'
+      }).then(() => window.location.reload());
     } else {
-      usuarios.push({ email, password, nombre, apellido });
-      localStorage.setItem("suscriptos", JSON.stringify(usuarios));
-      localStorage.setItem("usuarioActual", email);
-
-      Swal.fire({
-        title: '¡Suscripción exitosa!',
-        text: 'Ya podés acceder al contenido exclusivo.',
-        icon: 'success',
-        confirmButtonColor: '#66bb6a'
-      }).then(() => {
-        modalSuscripcion.style.display = "none";
-        location.reload();
-      });
+      modalLogin.style.display = 'flex';
     }
   });
-   }
-   }); 
+
+  // --- Botón Suscribirse ---
+  btnSuscribirse.addEventListener('click', () => {
+    modalSuscribir.style.display = 'flex';
+  });
+
+  // --- Cerrar modales ---
+  cerrarLogin.addEventListener('click', () => modalLogin.style.display = 'none');
+  cerrarSuscribir.addEventListener('click', () => modalSuscribir.style.display = 'none');
+
+  // --- Login ---
+  formLogin.addEventListener('submit', e => {
+    e.preventDefault();
+    usuarioLogueado = true;
+    localStorage.setItem('usuarioLogueado','true');
+    Swal.fire({
+      title: 'Login exitoso',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
+    modalLogin.style.display = 'none';
+    btnLogin.textContent = 'Cerrar sesión';
+    linkRecetas.classList.remove('disabled');
+    linkRecetas.removeEventListener('click', e => e.preventDefault());
+  });
+
+  // --- Registro simple ---
+  formSuscribir.addEventListener('submit', e => {
+    e.preventDefault();
+    usuarioLogueado = true;
+    localStorage.setItem('usuarioLogueado','true');
+    Swal.fire({
+      title: 'Registro exitoso',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
+    modalSuscribir.style.display = 'none';
+    btnLogin.textContent = 'Cerrar sesión';
+    linkRecetas.classList.remove('disabled');
+    linkRecetas.removeEventListener('click', e => e.preventDefault());
+  });
+});
+
  
  
